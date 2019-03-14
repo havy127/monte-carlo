@@ -1,0 +1,145 @@
+changelog for pvegas:
+
+Mon, Oct 9 2000:
+  Finished a complete overhaul of all pvegas programs.  This made it
+  necessary to break the interface and while doing so I broke it 
+  completely introducing some minor changes people had suggested but
+  which I refrained from incorporating because I feard breaking the
+  interface.  So, the main additions/changes are:
+* Traditionally, vegas is sometimes used to integrate not just one
+  function but also additional functions along with the principal one in
+  a single run. This makes sense provided that two conditions are met:
+  First, the additional functions should be easily calculated once the
+  principal function has been computed at the same point (otherwise one
+  could simply do another whole integration). Second, the additional
+  functions should resemble the principal function to some degree (since
+  the grid of hypercubes will be optimized for the principal function
+  only). Usually, one carries an accumulator around in the integrand's
+  implementation using static variables. But since static variables
+  cannot be used concurrently in parallel sections of the program one
+  has to do it differently. Thanks to Nikolas Kauer for pointing this
+  problem out to me---up to now I never needed this feature of the
+  vegas-algorithm. After agonizing about how to implement this elegantly
+  I came up with a minimal solution. Unfortunately, I had to finally
+  break the two year-old interface, sigh. The integrand now has to have
+  an additional argument in it's implementation, namely a pointer to an
+  array of additional accumulators. This avoids global variables and
+  lets pvegas easily do all the bookkeeping for the user (no need to 
+  worry about the WGT variable). Please check the README, the example 
+  and (when in doubt) the sources.
+* The output control (traditionally NPRN) has been brought more up to
+  date using a mask scheme. You may read all about this in the README 
+  or in...
+* ...vegas.h which had to be introduced in order not to let the user
+  have to worry about correctly declaring all this stuff.
+	
+Tue, Jul, 14 1999:
+* Fixed a bug that sometimes broke the REPRO behaviour when one thread
+  did not do any work in one iteration. This may happen if the integrand
+  is very light or the parallelism too large.
+* I am using a new editor, so don't be alarmed if you find an
+  inflationary diff-output, it's mostly whitespace. Use diff -b instead.
+  (I am now convinced that assuming tabs are 8 characters is evil.)
+	
+Wed, Sep, 8 1998:
+* Our University's HP X-Class suddenly does have a /usr/include/pthread.h, 
+  surprise! I found that it works fine and encourage every pvegas-user to
+  use pthreads instead of the CPS-threads since they perform better (no 
+  annoying idling main-thread). Built-instructions have been added to the
+  README.
+
+Fri, Jul, 31 1998:
+* I had some additional runs on the HP X-Class with excellent results 
+  now even across hypernodes. While a small bug was fixed that can 
+  potentially account for locality-problems in the parallel section this 
+  turned out not to be the solutions to the problems reported earlier. I 
+  can only speculate on what had caused these problems. Maybe the machine 
+  was just misconfigured. The new version of the Addendum shows the new 
+  benchmarks.
+* Minor changes to the CPS-thread-section that were made necessary by a
+  change in the interface made by HP. (Doesn't break code on older OSs.)
+
+Fri, Apr, 24 1998:
+* Extended the file vegastest.c added on Jan 2 to include some primitive
+  test of the RNG because some compilers may break this code. (This is,
+  however, a problem with certain compilers, not with pvegas or the RNG.)
+
+Mon, Apr, 20 1998:
+* Uploaded a first MPI-version. This implementation uses exactly the 
+  same method for decomposition as the multi-threaded pvegas. Instead of
+  locking variables and reading off what to do next it uses an explicit 
+  `call for work'-mechanism. Up to the moment, it has been tested on
+  Cray T3D, Convex Exemplar and a Network of Workstations (NOWs) with 
+  MPICH, where it might be very susceptible to communication-latencies. 
+  If care is been taken in order to tune NDIM_PAR and ncall, good 
+  scalings-behaviour can still be obtained on loosly coupled NOWs.
+* Major new feature introduced: hash-defining REPRO to be some
+  positive integer will result in skipping some random numbers so that
+  results will be obtained that 1) do not depend on the number of
+  processors and 2) that can directly be compared to the ones produced
+  by nvegas (where REPRO should be set to the same value). Several minor
+  changes were made to nvegas so that the output format is exactly the
+  same as in pvegas (even for nprn>0). See the README for more
+  information.
+* The Shift Register-RNG should now be working, even if sizeof(int) is
+  larger than 32 (which is the case on most Cray-machines e.g.).
+
+Fri, Jan 2 1998:
+* Added a warning in case the machine is not adhering to the LP64-model
+  in which case the RNG should probably be adjusted.
+
+Fri, Dec 12 1997:
+* Because of some misunderstandings on how to use the vegas-algorithm in
+  general I have decided to provide a simple sample-program. If the whole
+  buisiness is totally unclear to you, you are strongly advised to take
+  a look at vegastest.c
+
+Thu, Dec 11 1997:
+* I fixed a (very) stupid bug that caused wrong computation of npg. Sorry 
+  for that. Unfortunately this was present in all the versions I have put
+  on the net so far, so *P*L*E*A*S*E* get a newer version! (This bug is so
+  ridiculous I was considering silently removing the archive in order not 
+  to ruin my reputation -- I could resist. And, hey, Microsoft got big with 
+  crappy software ;-) Just for the record: the numerical results were not
+  affected by this bug. It was just the number of points (calls) that could
+  disagree grossly from that one you told pvegas to evaluate (ncall).
+* pvegas used to issue wrong complaints about worker-threads which could 
+  not be created. I made it shut up.
+
+Fri, Dec 5 1997:
+* I had some runs on a HP X-Class 2000 with 48 CPUs. The scaling turned out
+  to be perfect within one hypernode (16 CPUs) but had a terrible drop-down 
+  when the second hypernode was reached. Remember that the Convex SPP 1200
+  scaled nearly perfectly across 6 hypernodes! I would greatly appreciate
+  if somebody has an idea what is going wrong. Meanwhile, we can only blame
+  Hewlett-Packard. Compilation- and linking-flags for SPP-UX 5.2 can be
+  found in the README.
+* Added lot's of output on stderr if something unforseen happens, i.e. in 
+  case of assertion-failures. (I had to do this on the X-Class.) Made clear
+  distinction of what goes to stderr and what to stdout. Sorry for having
+  been lazy before.
+* Fixed a bug of wrong counting the number of threads that actually could
+  be spawned when some thread drowns at creation.
+
+Tue, Oct 21 1997:
+* defined a return-value (NULL-pointer) for p_vegasloop, since it is defined 
+  void* p_vegasloop(void *dummy)
+  in order to stop the IRIX-compiler from complaining.
+* added warning not to set mds=0. Yes, I know, our parallelization relies
+  on stratification. But we really do want to keep that mds-stuff, since it 
+  makes sense for testing with one worker-thread.
+
+Fri, Aug 22 1997:
+* cosmetic changes
+* introduced constant NDIM_PAR. Usually set to zero, this variable lets
+  the user choose the dimensionality of parallel space and with it the 
+  grain-size.
+
+Fri, Aug 8 1997:
+* Many major changes were implemented in this version. Notably the change 
+  from one-dimensional to floor(ndim/2) parallel space. If you are doing 
+  two- or threedimensional numerical integrations this does not make any
+  difference. Found an oops: obsolete code-section.
+
+Tue, Jun 6 1997:
+* First version put on the net.

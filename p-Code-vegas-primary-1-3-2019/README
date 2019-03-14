@@ -1,0 +1,596 @@
+ThEP - Theoretische Elementarteilchenphysik             October/9/2000
+Univ. Mainz, Staudingerweg 7, 55099 Mainz, Germany
+----------------------------------------------------------------------
+
+Welcome, number-cruncher!
+
+This short readme-file describes the use of the current version of the
+parallel VEGAS-implementation.  A recent version  of this document can
+always be retrieved via anonymous FTP from ftpthep.physik.uni-mainz.de
+in the directory /pub/pvegas/.  The  only versions available right now
+is one  for  SMP-systems having either  Pthreads (POSIX  1003.1c), old
+style Pthreads (aka draft 4) or CPS-threads (in the case of the Convex
+Exemplar) and another   one for MPI.   No  further implementations are
+being considered by  the author as this covers  the entire spectrum of
+present day hardware.
+
+
+  -rbk.
+  <Richard.Kreckel@GiNaC.DE>
+  <Richard.Kreckel@Uni-Mainz.DE>
+
+----------------------------------------------------------------------
+
+0 CONTENTS
+
+1 INTRODUCTION AND GENERAL INFORMATION
+  1.1  What is parallel vegas?
+  1.2  What machines does it run on?
+  1.3  What about the Copyright?
+  1.4  Where can I get it?
+  1.5  Is this the only parallelization of G.P.Lepage's vegas-
+       algorithm?
+  1.6  Why C?  Why not FORTRAN?
+  1.7  Why don't you provide install scripts or even binaries?
+
+2 THE GORY DETAILS
+  2.1  What sources does this version draw from? 
+  2.2  How do I compile/link it?
+  2.3  How do I call it?
+  2.4  Why is the new interface different from the old one?
+  2.5  So, what options for controlling the flow of vegas are 
+       provided?
+  2.6  Where does pvegas get its random-numbers from?
+  2.7  How does it scale?
+  2.8  I seem to get no improvement at all on my Sun. What's wrong?
+  2.9  Can I get reproducible results and still making use of 
+       parallelism?
+  2.10 Do causal random-numbers work between iterations?
+  2.11 What happened to vegasctl_t?
+  2.12 It is so slow!  What am I doing wrong?
+
+3 THE GORY DETAILS (MPI-SPECIFIC)
+  3.1  How do I call it?
+
+BIBLIOGRAPHY
+
+----------------------------------------------------------------------
+
+1 INTRODUCTION AND GENERAL INFORMATION
+
+
+1.1  What is parallel vegas?
+
+It's a parallelized version of G.P.Lepage's VEGAS-Algorithm. VEGAS, in
+turn, is an general-purpose adaptive Monte Carlo-Integrator (see [1]).
+It is well suited for numerical integration of low-dimensional volumes
+if nothing  else is known  about the integrand. If  you know e.g. that
+your integrand is concentrated in several  kernels and you know how it
+looks like in the neightborhood of these kernels you should reconsider
+your   problem:  a   general-purpose-algorithm   might be   completely
+inappropiate.
+
+If you want  to   be kept up  to  date   about recent  bux-fixes   and
+improvements, please make  sure to drop a  notice to the author.   You
+will then automatically be  informed as soon  as a new version becomes
+available. The e-mail address is <Richard.Kreckel@Uni-Mainz.DE>.
+
+
+
+1.2  What machines does it run on?
+
+Currently there is support for all systems that have either MPI or one
+of the following thread-modles: Pthreads (POSIX 1003.1c aka draft 10),
+old-style Pthreads draft 4  (originally POSIX 1003.4a) or CPS-threads.
+This should include nearly all modern parallel Hardware.
+
+For technical reasons, the program is split up into three files:
+o nvegas.c
+  This is a sequential version of vegas  close to the original one. It
+  is included only in order to be able to check the correctness of the
+  output. For this  purpose it  has the  same built-in random   number
+  generator (RNG) as the other ones (c.f. questions 2.6 and 2.9.)
+o pvegas.c
+  Code for multi-threaded environments,  basically Pthreads.   For use
+  with the still frequently encountered  Draft 4 simply set the symbol
+  PVEGAS_POSIX_D4 (e.g.    by compiling  with  the command-line   flag
+  -DPVEGAS_POSIX_D4).   On   Convex-Systems you can   set  the  symbol
+  PVEGAS_CPS for use with the CPS-thread-model.  (Note that some SP-UX
+  5 do have  a   working pthread-library, but lack  the  corresponding
+  /usr/include/pthread.h which means  you cannot use it.   Please, try
+  by all means to get the header-file if your system has libpthread!)
+o pvegas_mpi.c
+  Version for use on MPI-based parallel systems, like networks of
+  workstations or massive parallel machines.
+
+
+
+1.3  What about the Copyright?
+
+VEGAS was developed by G.P.Lepage at Cornell. He says:
+
+> `My intention is   to keep any version  of  VEGAS I produce   freely
+> available  to anyone.  I do  that by  copyrighting what  I send out,
+> following the practices of the GNU people, for example.'
+
+The parallelized version follows  the same spirit.  Go ahead, use  it,
+enjoy it, but don't  claim any rights  and  always remember that  this
+software comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+
+1.4  Where can I get it?
+
+Probably the best source is where you got this document from. :-) Look
+into this URL: <ftp://ftpthep.physik.uni-mainz.de/pub/pvegas/>.
+
+
+
+1.5  Is this the only parallelization of G.P.Lepage's vegas-algorithm?
+
+No. I know of at least three others.  I will, however, only comment on
+the  two which  have been published  [6,  7].   In [6] a  distributed-
+memory-parallelization  using  this  more explicit  paradigm  has been
+done.   I would like   to make clear   that  the approach does (to  my
+knowledge) NOT suffer from   the problem with  macro-parallelization I
+have outlined in [5].  (My apologies  if the impression awoke, but all
+efforts  on parallelization of vegas have  so far  been independent of
+each other and the fact that [5] and [6] appeard nearly simultaneously
+as e-prints is a mere coincidence.) I would  also warn the reader, not
+to conclude anything at all from  the worse scalings published in [6].
+First, the distributed-memory-approach involves more overhead than the
+shared-memory-approach and  second, one would  first have to test them
+with identical test-functions in order  to compare the two algorithm's
+performances.   In [9] an attempt  is made to overcome vegas' inherent
+problems  with non-factorizable    singularities.   En passant    this
+algorithm is parallelized as well, using MPI [8].  This may eventually
+become a very attractive tool.
+
+
+
+1.6  Why C?  Why not FORTRAN?
+
+Why FORTRAN?  Why not C?  Really, I  don't  want to code in  something
+like FORTRAN, end of story.  If you prefer FORTRAN, that's fine.  Code
+your  numerical  routines   in  FORTRAN and   compile  pvegas  with  a
+C-compiler and link them together.  Ask your local  gurus on how to do
+this.  (Strangely this is by far the most FAQ.)
+
+Quite  generally,  numerical FORTRAN   code  is faster  than numerical
+C-code.  On the  best compilers the difference  is only a few percent.
+However, for more complex  programs I am conviced that  C (or C++)  is
+far  superior   to FORTRAN.   So,    the mixture of  having  low-level
+integrands written in FORTRAN and Vegas in C and linking both together
+seems to be the right thing to do.
+
+
+
+1.7  Why don't you provide install scripts or even binaries?
+
+I could provide binaries for several dozen platforms / compilers.  But
+it   makes sense  to  play  with  some  parameters  and this  requires
+recompilation anyways.   Not only on  macho  machines is it  useful to
+adjust all   kinds  of  preprocessor parameters   (just   consider the
+reproducibility-flag REPRO).
+
+Install  scripts like those produced  by GNU Autoconf  suffer from the
+same problem.  There is simply no uniform way to figure out the number
+of processors available for   setting  MXWORK for instance.   Even  if
+there  was, in high performance  computing  it is  common practice  to
+compile their programs on one machine and run them on another.
+
+So, this is simply a no-go.
+
+
+----------------------------------------------------------------------
+
+2 THE GORY DETAILS
+
+
+2.1  What sources does this version draw from? 
+
+The skeleton of this parallelized vegas stems from the version printed
+in  Numerical  Recipes  in   C (NRC)   [2]  including upgrades  up  to
+patchlevel  6.  Several minor fixes  from third hand have been applied
+as well.  You do not need any other programs from NRC.  You don't even
+have to compile against nrutil.h or nr.h.
+
+
+
+2.2  How do I compile/link it?
+
+First, make  sure what kind  of thread-model your machine supports. If
+you don't have the  final standard of  Posix Threads, you need to pass
+an  additional   argument  at  compile-time:  PVEGAS_POSIX_D4  for the
+frequently  encountered    Draft 4 and   PVEGAS_CPS   for the Convex's
+CPS-model. The following table  should give you a  good start for some
+of the most common Unixes:
+
+======================================================================
+OS:     Compiler:       Flags:                  Dynamically link with:
+======================================================================
+LINUX:  gcc             -O2 -D_REENTRANT        -lpthread
+----------------------------------------------------------------------
+OSF/1 3.2: cc           -O2 -DPVEGAS_POSIX_D4   -lpthreads -lc_r
+
+        gcc             -O2                     -lpthreads -lc_r
+----------------------------------------------------------------------
+DU4, DU5: cc            -O2                     -lpthread -lc_r
+
+        gcc             -O2                     -lpthread -lc_r
+----------------------------------------------------------------------
+Solaris: /usr/ucb/cc    -O2                     -L/usr/ucblib -lucb 
+                                                -lpthread
+ (see 
+section  /opt/SUNWspro/bin/cc   -fast -xO4      -lpthread
+  2.8)                          (maybe -xarch=v8plusa)
+        gcc             -O2                     -lpthread
+----------------------------------------------------------------------
+SP-UX4: /usr/convex/bin/cc -DPVEGAS_CPS         -Wl,+parallel
+                        -O3 -noautopar
+----------------------------------------------------------------------
+SP-UX5: /opt/ansic/bin/c89 -DPVEGAS_CPS         -lpthread -lcps -lpthread 
+                        +O3 -noautopar          -lail -Wl,+parallel -lm
+or:     /opt/ansic/bin/c89 -D_HPUX_SOURCE       -lpthread -lail 
+                        +O3 -noautopar          -Wl,+parallel -lm
+----------------------------------------------------------------------
+IRIX6.4:/opt/MIPSpro/bin/cc -O3                 -lpthread        
+======================================================================
+
+In  any    case,   you  should     make  sure  to  switch    off   any
+autoparallelization if you  use other  compilers/architectures because
+this would interfere with the thread-parallelization  of pvegas!  Also
+note that linking your   programs  statically instead  of  dynamically
+results in slightly  faster code at  the cost of  increasing file size
+and memory use.
+
+
+
+2.3  How do I call it?
+
+After compiling this module all you have to do is provide an integrand
+and a main-function that calls vegas.   The integrand's interface must
+be:
+  void func(double x[], double results[])
+where x[]   has  arguments running   from 0  to  the  dimension-1  and
+represents a  vector to the  point to  be evaluated, results[]  may be
+used  to accumulate   additional functions  along   with the principal
+integral.
+
+The complete interface for all  vegas routines in the files  pvegas.c,
+pvegas_mpi.c and nvegas.c is always:
+
+void vegas(double regn[], int ndim, void (*fxn)(double x[], double f[]),
+           int init, unsigned long ncall, int itmx, int nprn,
+           int fcns, int pdim, int wrks,
+           double tgral[], double sd[], double chi2a[]);
+
+double  regn[] holds   limits    for the ndim-dimensional   domain  of
+integration,  double tgral[], sd[] and  chi2a[] hold  the results: the
+estimate for the integral, the standard deviation and chi squared over
+n      (the number   of      iterations),   respectively.  All   other
+input-parameters are described in 2.5.
+
+The easiest approach is  most probably to have a  look at the example-
+files vegastest.c or vegastest_mpi.c and try to start extending them.
+
+For the  multitreaded  pvegas  it  is absolutely  essential  that your
+function is  MT-save.  (This is not  an issure for  MPI.)  In our case
+this means that global variables must  not be written from within that
+function.    This would   result    usually  in what  are     known as
+race-conditions in parallel programs,   when two  instances  (threads,
+processes, ...)  are trying to access it simultaneously. The result is
+unpredictable. Note  that it might not be  enough  to just make _your_
+function not write global variables.   NRC [2], for example, provide a
+couple of preprocessor-macros   in   nrutil.h which make  it  easy  to
+evaluate maxima, minima, squares,  etc. in C.  Consider, for instance,
+the following (sick) line of code:
+  static float sqrarg; 
+  #define SQR(a) ((sqrarg=(a)) == 0.0 ?  0.0 : sqrarg*sqrarg)
+The problem is that the variable sqrarg's scope extends over the whole
+code and is shared  among threads. These macros  must therefore not be
+used in your function and you need to rebuild them  by hand. Make sure
+to watch out for other sources of race-conditions!
+
+
+
+2.4  Why is the new interface different from the old one?
+
+The current versions of  pvegas routines provided by  me all break the
+old interface  that I had used  myself  before August 1999.   This has
+various  reasons:   First  of all,  the  old  interface   aimed to  be
+compatible to  NRC [2], which as  time went by  turned out to be not a
+good  idea.  For  instance, there   are  some FORTRAN relics  floating
+around: arrays are always counted from 1 to n instead of from 0 to n-1
+which leabes element  0 unused.   This may  become  quite some  wasted
+memory in the case of two-dimensional arrays (2.5kB per thread in case
+the user doesn't change  any #defines) and  people were really  having
+problems with  their stacksize (although  the OS  vendor  ought to  be
+blamed for   that).  It also  amounts   to  some overall  decrease  in
+understandability.  Moreover, I was asked how to accumulate additional
+integrals along with the principal  integral.   This may be useful  if
+you  want to calculate  integrals over more  than one  function if the
+domain  of integration is the  same.  Two other  conditions have to be
+met: First, all the secondary integrands should  be easily computed at
+any point once the  primary integrand is  known (otherwise it would be
+better to fire  up  vegas again).   Second, the   secondary integrands
+ought to resemble the primary integrand to  some extent since the grid
+will be  adaptively optimized for the  primary integrand only.  In the
+old version, people  had to accumulate  the result within the function
+manually  (this is  why the  weight  WGT is  sometimes  passed to that
+function  in  addition to the  evaluation  vector  x).   However, in a
+multithreaded environment this cannot   work without introducing  some
+locking  which would certainly trash all   scalability.  Hence the two
+vectors that are  passed within vegas:  double x[] for  the evaluation
+point and  double f[] for returning   the results for  each integrand.
+Controlling  such additional integrations triggered  a major change in
+the code and made a change in the interface necessary.
+
+Bottom line: The old interface could not be  extended, so I decided to
+take the chance and fix everything that had annoyed people now and for
+good.
+
+
+
+2.5  So, what options for controlling the flow of vegas are provided?
+
+Again, the complete synopsis of all functions provided herein is:
+
+void vegas(double regn[], int ndim, void (*fxn)(double x[], double f[]),
+           int init, unsigned long ncall, int itmx, int nprn,
+           int fcns, int pdim, int wrks,
+           double tgral[], double sd[], double chi2a[]);
+
+Changing  certain arguments  of  vegas may    not  make sense  between
+different   calls.  These are the  domain   of integration regn[], the
+dimensionality ndim, the pointer to the integrand (*fxn)(x[],f[]).  Of
+course  the  return values for the    integral, standard deviation and
+chi^2 aren't to be touched outside vegas either.
+
+The other variables are usually changed from run to run:
+
+======================================================================
+type:   name:   old:    functionality:
+----------------------------------------------------------------------
+int     init    init    Initialization level
+
+ulong   ncall   ncall   Number of sample points per iteration
+
+int     itmx    itmx    Number of iterations in one call
+
+int     nprn    nprn    Bit field for output
+
+int     fcns     --     Number of integrands (usually one)
+
+int     pdim     --     Dimension of parallel space (0 = autosense)
+
+int     wrks     --     Number of parallel working units
+======================================================================
+
+Note that pdim and wrks are unused in nvegas.c, they are provided only
+for object-compatibility  with  the vegas  function   from pvegas.c or
+pvegas_mpi.c, respectively.
+
+The initialization level init is just  the conventional in Vegas.  You
+first call vegas having set it to 0 for a cold start. Then you call it
+again  with init set to 1  thus inheriting the  grid  optimized in the
+first  run but discarding   the   previous results.  Finally  you  may
+restart  Vegas several times  having  it  set  to   2 thus each   time
+inheriting the refined grid and the results accumulated so far.
+
+The number of  sample points per iteration is  specified by  ncall and
+the number of iterations per call by  itmx.  Numerically, it is a good
+idea to leave itmx small and try  to increase ncall instead, since the
+algorithm will be able to better refine the grid.
+
+The number of  integrands that  are  evaluated in (*fxn)(double   x[],
+double f[]) may be specified by fcns.  Please remember  to set FNMX in
+vegas.h to the maximum of all possible values fncs may take.
+
+You  have to specify the number  of workers using wrks.  This variable
+is   of course ignored  in  nvegas.c  but  has  the desired  effect in
+pvegas.c  and  pvegas_mpi.c.   On  macho  machines  you should set the
+preprocessor   variable  MXWORK to the  number   of processors you are
+allowed to use.
+
+The variable called  nprn occassionally found in other implementations
+of vegas  has been given a  new and more  flexible semantics.  You may
+now switch  on  different stages of output  by  bitwise or-ing certain
+macros  (#defined  in  vegas.h) in  the   member  nprn.  For instance,
+passing   NPRN_INPUT |  NPRN_RESULT  will turn  on  printing  of input
+parameters as well as the results  of the primary integration, but not
+the  results  of secondary integrations.   To  study the grid instead,
+pass NPRN_INPUT   | NPRN_GRID which will   turn  on printing  of input
+parameters as well as the grid data.  In some cases not the whole grid
+but only some grid data is needed to  be compared against a file using
+diff for instance.  The flag NPRN_GRID_2  will print only every second
+line of the grid data.  (By the way, this is smart software, so if you
+set it to NPRN_GRID_2 | NPRN_GRID_4 vegas will print every second line
+which includes every  fourth line anyhow.:-) See   file vegas.h for  a
+list of what can  be specified or simply say  NPRN_DEFAULT if you  are
+happy with the traditional output.
+
+
+
+2.6  Where does pvegas get its random numbers from?
+
+This module  has   a  built-in  random number generator  (RNG).    The
+algorithm used is GFSR [3,4]. It is self-initializing in a sense, that
+several  instances  are   created  whith  independent starting-fields.
+These  values are determind with a  simple linear congruential RNG. No
+checks need to be performed whether they are really independent or not
+since   the number of workers  W  times the  number  Q  of  the RNG is
+generally much less than 2^32 and thus the probability of running into
+correlations can (hopefully) be neglected. Refer to the program-source
+for a selection of numbers P and Q.  Please read the article [5] for a
+more thorough discussion of this issue.
+
+One should always keep in mind that RNGs are fragile objects, they can
+easily be corrupted.  It is therefore  a good advise to manually check
+the RNG on every new machine that is  being used.  For example, on the
+Cray T3D it  turned  out that switching on  debugging-information with
+the compiler-flag -g trashed  the RNG because  in this case  a casting
+from  unsigned int to double  went wrong.  (The resulting numbers were
+evenly distributed between -0.5 and +0.5 instead of from 0.0 to 1.0.)
+
+
+
+2.7  How does it scale?
+
+The  short  anser is:    very good.  (Refer  to  [7]    for up-to-date
+measurements.)  If you are patient  enough,  read on. This version  is
+guaranteed to scale perfectly if an asymptotic condition is met:
+ *) The number of sample-points grows to infinity
+This being never the case you should carefully  determine the point of
+takeover on your system in order not to hog CPU-time.
+
+For a  minimal  loss of performance another  condition  is needed: The
+function to be evaluated should not be too simple, i.e. not be done by
+the processor  in a   few cycles.   If   not too many  processors  are
+involved, usually a couple  fdivs (floating-point divisions)  or calls
+to logaritms  are enough. (Again the  number of cycles differs greatly
+from system to system.)   So, there are only   rules of thumb.   It is
+absolutely  essential   that  you take some    basic timings  on  your
+particular system  and  your  particular  problem, specially  if  your
+function is  "light-weight".  You may also want  to  change the member
+variable pdim of    your vegasctl_t in   your  main file in  order  to
+manually   adjust the dimension  of   parallel space: a low  dimension
+results in coarse grain-size with  little communication-overhead and a
+high   dimension  in   a   fine     grain-size with   probably    high
+communication-overhead.  (Of course the maximum value for pdim is just
+ndim.)  Please  read [5] for  more  information  about the concept  of
+parallelization.
+
+IN A  NUTSHELL: If your  numerical routines  require a few CPU-seconds
+anyway, forget about parallelism. If it requires  much more and pvegas
+does  not scale, then most probably  YOU are doing something wrong and
+you  must  think about changing some  parameters.  If it still doesn't
+scale  it is an architectural problem  and  the author of pvegas would
+like to hear about it just for curiosity.
+
+
+
+2.8  I seem to get no improvement at all on my Sun. What's wrong?
+
+You  might  need to explicitly  set  the concurrency-level  if you are
+working with  Solaris,  using  thr_setconcurrency(3T).  As   a  single
+argument of type int you should specify at least the number of workers
+you request. This is  an annoying Solaris-`feature', please take  care
+of it in  your  main-program.  If you  don't,  your program will  most
+probably fail to scale at all---you should try it out.
+
+
+
+2.9  Can I get reproducible results and still make use of parallelism?
+
+Yes.  Just  change the value of  the preprocessor-flag REPRO from 0 to
+some positive integer. Then a couple of random-numbers will be skipped
+in such a  way that the same points  will be sampled regardless of the
+number  of processors. We  call  this causal random number generation.
+This should be used for bug-tracking only  and not for production-runs
+because it slows down the program. It is also possible to conveniently
+compare  the numerical output  with the reference-version nvegas.c (if
+REPRO is set to the same value there)  for example using diff(1).  You
+should  never encounter any   numerical  differences when using   this
+feature.  If you do, something is really messed  up and you must start
+to debug.   Note    that since all     code used by   this  feature is
+hash-defined,   absolutely  no overhead is   introduced when REPRO==0,
+guaranteeing  the usual performance  appreciated  by  so many  people.
+(N.B.: The  value you pass into  REPRO is really used for initializing
+the RNG if it's different from zero.)
+
+
+
+2.10  Do causal random-numbers work between iterations?
+
+Yes,  they do.  They  even  work with multiple  invocations of vegas()
+with different degrees  of  parallelism.  Of course  these invocations
+must take place within the same program-run.
+
+
+
+2.11 What happened to vegasctl_t?
+
+Aha, you have  been peeking a  prerelease  version that was  on FTP in
+late 1999 and early 2000.  This  is a dark  chapter.  I wanted to hide
+some paraemters in a structure vegasctl_t.  While the design available
+in the  prerelease was   flawed  (you want  the parameters  that don't
+change often sit inside  a structure, not the  ones that change often)
+the real reason  why this has  been abandoned is  that some  users got
+confused by  some simple pointers to  structures and  kept protesting.
+Somebody  even wanted to  rewrite everything in FORTRAN (whatever came
+out of it).  Please forget vegasctl_t.
+
+
+2.12 It is so slow!  What am I doing wrong?
+
+Of course it shouldn't.  There are several potential pitfalls:
+1) Is the integrand too lightwight?  Solution: try playing with pdim.
+2) Are you using  malloc()  extensively  in your integrand?  Solution:
+   don't!  I see  no reason  why you should do that in  every call  to 
+   (*fxn)(double x[], double f[]).  This is a waste of resources.  You
+   are most likely feeling  the difference because when linking with a 
+   thread library  you get a  reentrant-safe  malloc()  call  which is 
+   typically 2-4 times slower than the normal one  (which takes 40-100
+   CPU cycles anyhow).
+
+
+----------------------------------------------------------------------
+
+3 THE GORY DETAILS (MPI-SPECIFIC)
+
+
+3.1  How do I call it?
+
+Just  as usual, with  the parameter wrks the  number of processors you
+want to make use of. There is, however, one thing to keep in mind: You
+are  resposible for setting  up   the MPI-Environment in main().  This
+cannot easily be done within vegas because of two reasons:
+  I) While some MPI-implementations  do  not require the  arguments of
+main() to be  passed, others do.  So  you  should call MPI_Init(&argc,
+&argv); prior to calling  vegas. The standard is explicitly unspecific
+about this. [8]
+  II) Some  implementations leave   garbage  in the  system when  they
+finish  without MPI_Finalize()  being  called (semaphores or IPC-shmem
+segments for instance).   vegas cannot call  this  routine, because it
+does not know whether it is called again  or not.  If  it calls it, no
+subsequent call to MPI_Init is allowed according to the standard.
+
+
+----------------------------------------------------------------------
+
+BIBLIOGRAPHY:
+
+[1]:  G.P. Lepage: A New Algorithm for Adaptive Multidimensional 
+      Integration; Journal of Computational Physics 27, 
+      192-203, (1978)
+
+[2]:  W. Press, S. Teukolsky, W. Vetterling, B. Flannery: Numerical
+      Recipes in C, (second edition) Cambridge University Press, 
+      1992.
+
+[3]:  R.C. Tausworthe: Random numbers generated by linear 
+      recurrence modulo two, Math. Comput. 19, 201-209, (1965)
+
+[4]:  I. Deak: Uniform random number generators for parallel
+      computers; Parallel Computing, 15, 155-164, (1990)
+
+[5]:  R. Kreckel: Parallelization of adaptive MC integrators, 
+      MZ-TH/97-30, physics/9710028; Comp. Phys. Comm., 106, 258-266, 
+      (1997) (A preliminary version of this article can be retrieved 
+      via anonymous ftp from ftpthep.physik.uni-mainz.de in the directory
+      /pub/pvegas/.)
+
+[6]:  S. Veseli: Multidimensional integration in a heterogeneous
+      network environment; FERMILAB-PUB-97/271-T; physics/9710017
+
+[7]:  R. Kreckel: Addendum: Parallelization of adaptive MC integrators,
+      MZ-TH/98-54, physics/9812011, (Available via anonymous ftp from
+      ftpthep.physik.uni-mainz.de in the directory /pub/pvegas/.)
+
+[8]:  MPI-Forum: MPI: A Message-Passing Interface Standard, University
+      of Tennessee, Knoxville, Tennessee, (1995)
+
+[9]:  T. Ohl: Vegas Revisited: Adaptive Monte Carlo Integration Beyond 
+      Factorization; hep-ph/9806432
