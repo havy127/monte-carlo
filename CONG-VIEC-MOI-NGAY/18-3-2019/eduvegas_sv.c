@@ -102,11 +102,9 @@ double gfsr_rand(unsigned int w[], int *k)
  * The multiplier and increment were provided by KOMA, Univ.Mainz.
  * (kw stands for Kalos & Whitlock)
  */
-
 /*
 * Giã số ngẫu nhiên
 */
-
 unsigned int kw_rand(void)
 {
   rdum = (1812433253 * rdum + 314159265);
