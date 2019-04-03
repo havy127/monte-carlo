@@ -21,10 +21,10 @@
 /*
  * prototype for vegas
  */
-void vegas_demo(double regn[], int ndim, void (*fxn)(double x[], double f[]),
-           int init, unsigned long ncall, int itmx, int nprn,
-           int fcns, int pdim, int wrks,
-           double tgral[], double sd[], double chi2a[]);
+// void vegas(double regn[], int ndim, void (*fxn)(double x[], double f[]),
+//            int init, unsigned long ncall, int itmx, int nprn,
+//            int fcns, int pdim, int wrks,
+//            double tgral[], double sd[], double chi2a[]);
 
 /*
  * The two constants for the GFSR random number generator
