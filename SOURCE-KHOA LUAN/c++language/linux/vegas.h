@@ -51,3 +51,11 @@
  * Note that small values of SR_Q and values near SR_P/2 should
  * be avoided. Source: Hamilton, CPC 85 (1995), 127-152
  */
+
+
+/*
+Define function 
+*/
+
+unsigned int kw_rand(void);
+void gfsr_init(long seed);
