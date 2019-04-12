@@ -173,13 +173,13 @@ void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replac
     unsigned long npg;           /* number of calls within bin f != 0            */
   } pointAccu;                   /* accumulator over points x within bins...     */
   pointAccu Ax;                  /* ...for integrand                             */
-  double f;                      /* passed into fxn for evaluation at x         */
+  double f;                      /* passed into fxn for evaluation at x          */
   double x[MXDIM];               /* evaluation point                   (x[])     */
   double d[NDMX][MXDIM];         /*                                    (d[][])   */
   double di[NDMX][MXDIM];        /* delta i                            (di[][])  */
   double dt[MXDIM];              /*                                    (dt[])    */
   double r[NDMX];                /*                                    (r[])     */
-  static double xi[MXDIM][NDMX]; /*                               (xi[][])  */
+  static double xi[MXDIM][NDMX]; /*                                    (xi[][])  */
   double xin[NDMX];              /* aux. variable for rebinning        (xin[])   */
   double dx[MXDIM];              /* width of integration region        (dx[])    */
   double xrand;                  /* uniform dens 0.0 <= xrand < 1.0   (xrand)   */

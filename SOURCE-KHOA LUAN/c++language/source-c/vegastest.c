@@ -137,7 +137,7 @@ int main(int argc, char **argv)
   double chi2a[FUNCTIONS];   /* chi^2/n                                      */
   double reg[2*DIMENSION];   /* integration domain                           */
 
-  randtest();
+  // randtest();
 
 #if defined(sun)    /* see README and set the argument below properly */
   if (thr_setconcurrency(8)) {
