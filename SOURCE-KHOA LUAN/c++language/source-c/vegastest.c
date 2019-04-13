@@ -125,39 +125,39 @@ void randtest()
     if (fabs(0.5-x)>0.5) printf("Oh my god, RN=%f\n",x);
     sigma += (x-x0)*(x-x0);
   }
-  printf("sigma=%f   normalized with %g\n",sigma/=RANDTEST,gfsr_norm);
+  printf("sigma=%f   normalized with %g\n", sigma/=RANDTEST, gfsr_norm);
   return;
 }
 
 int main(int argc, char **argv)
 {
-  int i;
-  double estim[FUNCTIONS];   /* estimators for integrals                     */
-  double std_dev[FUNCTIONS]; /* standard deviations                          */
-  double chi2a[FUNCTIONS];   /* chi^2/n                                      */
-  double reg[2*DIMENSION];   /* integration domain                           */
+  // int i;
+  // double estim[FUNCTIONS];   /* estimators for integrals                     */
+  // double std_dev[FUNCTIONS]; /* standard deviations                          */
+  // double chi2a[FUNCTIONS];   /* chi^2/n                                      */
+  // double reg[2*DIMENSION];   /* integration domain                           */
 
-  // randtest();
+  randtest();
 
-#if defined(sun)    /* see README and set the argument below properly */
-  if (thr_setconcurrency(8)) {
-    perror("call of thr_setconcurrency() failed");
-    exit(-1);
-  };
-#endif
+// #if defined(sun)    /* see README and set the argument below properly */
+//   if (thr_setconcurrency(8)) {
+//     perror("call of thr_setconcurrency() failed");
+//     exit(-1);
+//   };
+// #endif
 
-  for (i=0; i<DIMENSION; i++) {
-    reg[i] = 0.0;
-    reg[i+DIMENSION] = 1.0;
-  }
+//   for (i=0; i<DIMENSION; i++) {
+//     reg[i] = 0.0;
+//     reg[i+DIMENSION] = 1.0;
+//   }
 
   /* set up the grid (init = 0) with 5 iterations of 1000 samples,
    * no need to compute additional accumulators (fcns = 1),
    * no parallelization yet (wrks = 1). */
-  vegas(reg, DIMENSION, testfun,
-        0, 10000, 50, NPRN_INPUT | NPRN_RESULT,
-        estim, std_dev, chi2a);
   // vegas(reg, DIMENSION, testfun,
+  //       0, 10000, 50, NPRN_INPUT | NPRN_RESULT,
+  //       estim, std_dev, chi2a);
+  // // vegas(reg, DIMENSION, testfun,
   //       1, 10000, 5, NPRN_INPUT | NPRN_RESULT,
   //       estim, std_dev, chi2a);
   /* refine the grid (init = 1) with 5 iterations of 10000 samples,
@@ -174,7 +174,7 @@ int main(int argc, char **argv)
   //       FUNCTIONS, 0, 4,
   //       estim, std_dev, chi2a);
 
-  printf ("Result: %g +/- %g\n", estim[0], std_dev[0]);
+  // printf ("Result: %g +/- %g\n", estim[0], std_dev[0]);
   // for (i=1; i<FUNCTIONS; ++i)
   //   printf("      ( %g +/- %g )\n", estim[i], std_dev[i]);
   /* Having set REPRO to 1 the numerical result should be (provided your
