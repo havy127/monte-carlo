@@ -1,5 +1,6 @@
 #include "vegasclass.h"
 #include <cmath>
+#include <ctime>
 #include <fstream>
 
 
@@ -20,25 +21,33 @@ double myrand(unsigned int w[], int *k)
   if (*k >= SR_P) *k = 0;
   j = *k + SR_Q;
   if (j >= SR_P) j -= SR_P;
+  // cout << "w[*k]: " << w[*k] << endl;
+  // cout << "w[j] " << w[j] << endl;
   w[*k] = w[*k] ^ w[j];
+  // cout << "w[*k] ^ w[j]: " << w[*k] << endl;
+  // cout << "(double)w[*k] * gfsr_norm: " << (double)w[*k] * gfsr_norm << endl;
   return((double)w[*k] * gfsr_norm);
 }
 
 void randtest()
 {
   int i;
-  unsigned int rdum = 42;
+  long seed = time(NULL);
+  cout << "time(NULL): " << seed << endl;
+  unsigned int rdum = seed;
   double x, x0, sigma; 
-  ofstream t_gfsr_m_file;
-  t_gfsr_m_file.open ("gfsr_m_file.txt");
-  gfsr_norm = (double)(1/(pow(2.0,(long double)(8*sizeof(int))) - 1));
+  ofstream t_gfsr_m_file, x_numbers_file, add_t_gfsr_k_file;
+  t_gfsr_m_file.open ("t_gfsr_m_file.txt");
+  x_numbers_file.open ("x_numbers_file.txt");
+  add_t_gfsr_k_file.open ("add_t_gfsr_k_file.txt");
 
-  cout << "(pow(2.0,(long double)(8*sizeof(int))) - 1) : " << gfsr_norm << endl;
+  gfsr_norm = (double)(1/(pow(2.0,(long double)(8*sizeof(int))) - 1));
+  cout << "gfsr_norm : " << gfsr_norm << endl;
+  cout << "t_gfsr_k : " << &t_gfsr_k << endl;
   for (i=0; i<SR_P; i++) { 
     rdum = (1812433253*rdum + 314159265);
     t_gfsr_m[i] = rdum;
     t_gfsr_m_file << t_gfsr_m[i] << endl;
-    cout << t_gfsr_m[i] << endl;
   }
   t_gfsr_k = -1;
   t_gfsr_m_file.close();
@@ -48,19 +57,21 @@ void randtest()
   /*
   * - Tạo ra mãng t_gfsr_m[] chứa các gia trị ngẫu nhiên x (không lớn hơn 1)
   * - x0: là số TB.
-  * - Vòng for thứ 2: tính sai số sigma.  
-  */
+  * - Vòng for thứ 2: tính sai số sigma.  RANDTEST
+  */ 
   for (i=0; i< RANDTEST; i++) { 
+
     x = myrand(t_gfsr_m,&t_gfsr_k);
-    // cout << "x=myrand: " << x <<endl ;
+    x_numbers_file << x <<endl;
+    add_t_gfsr_k_file << &t_gfsr_k <<endl;
+  
     if (fabs(0.5-x)>0.5) cout << "Oh my god, RN=" << x;
-    // cout << "x0t=myrand: " << x0 <<endl ;
     x0 += x;
-    // cout << "x0=myrand: " << x0 <<endl ;
   }
-  cout << "x0=myrand: " << x0 <<endl ;
+  x_numbers_file.close();
+  add_t_gfsr_k_file.close();
+
   x0 = x0 /RANDTEST;
-  cout << " calculated: mean=" << x0 ; 
 
   for (i=0; i < RANDTEST; i++) {
     x = myrand(t_gfsr_m,&t_gfsr_k);
