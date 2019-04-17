@@ -6,5 +6,6 @@
         "cmath": "cpp",
         "ostream": "cpp",
         "climits": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Disabled"
 }
