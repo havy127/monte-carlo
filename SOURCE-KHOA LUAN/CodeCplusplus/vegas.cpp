@@ -122,11 +122,7 @@ void demo()
   cout << "\na.wgt = " << bc;
 }
 
-
-
-
 // vegas
-
 
 void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replace f[] by f(1)
            int init, unsigned long ncall, int itmx, int nprn,           // fxn(x, &f); /* call integrand at point x */
@@ -228,15 +224,15 @@ void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replac
     }
     if (nprn & NPRN_INPUT)
     {
-      // printf("%s:  ndim= %3d  ncall= %8.0f\n",
-      //        " Input parameters for vegas", ndim, calls);
-      // printf("%28s  ittot=%5d  itmx=%5d\n", " ", ittot, itmx);
-      // printf("%28s  nprn=0x%04x  ALPH=%5.2f\n", " ", nprn, ALPH);
-      // printf("%28s  mds=%3d  nd=%4d%15s npg=%d\n", " ", mds, nd, " ", npg);
+      printf("%s:  ndim= %3d  ncall= %8.0f\n",
+             " Input parameters for vegas", ndim, calls);
+      printf("%28s  ittot=%5d  itmx=%5d\n", " ", ittot, itmx);
+      printf("%28s  nprn=0x%04x  ALPH=%5.2f\n", " ", nprn, ALPH);
+      printf("%28s  mds=%3d  nd=%4d%15s npg=%d\n", " ", mds, nd, " ", npg);
       for (j = 0; j < ndim; j++)
       {
-        // printf("%30s xl[%2d]= %11.4g xu[%2d]= %11.4g\n",
-        //        " ", j, regn[j], j, regn[j + ndim]);
+        printf("%30s xl[%2d]= %11.4g xu[%2d]= %11.4g\n",
+               " ", j, regn[j], j, regn[j + ndim]);
       }
     }
   }
