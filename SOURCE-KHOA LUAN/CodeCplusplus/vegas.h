@@ -19,6 +19,7 @@ using namespace std;
  * Different levels of verbosity.  They substitute the old unflexible nprn
  * integer.  Build up your own printlevel by bitwise or-ing several of these.
  */
+
 #define NPRN_INPUT   0x0001  /* print input parameters                       */
 #define NPRN_RESULT  0x0002  /* print results of primary integration         */
 #define NPRN_SECRES  0x0004  /* print results of secondary integrations      */

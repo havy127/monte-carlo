@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include "vegas.h"
-// #include "iterAccu.h"
 
 using namespace std;
 
@@ -19,6 +18,7 @@ int functions;                       /* copy of (*ctl).fcns
 /*
 Điều chỉnh lại các độ dài delta xi 
 */
+
 void rebin(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
 {
   int i;
@@ -52,6 +52,7 @@ void rebin(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
 /*
 * Hàm tạo mãng ngẫu nhiên. 
 */
+
 double gfsr_rand(unsigned int w[], int *k)
 {
   int j;
@@ -109,21 +110,18 @@ void gfsr_init(long seed)
 //   double sInt; /* cumulative sum for integral        (si)      */
 // };
 
-void demo()
+//Test random number
+void randomNumberTest()
 {
-  unsigned int temp;
-  temp = kw_rand();
-  cout << "kw_rand: " << temp << endl;
-  gfsr_init(124324);
-  cout << "gfsr_init: " << gfsr_normn << endl;
-  cout << "\n";
-  iterAccu a;
-  double bc = a.Wgt;
-  cout << "\na.wgt = " << bc;
+  
+   double num;
+    gfsr_init((long)time(NULL));
+    num = gfsr_rand(gfsr_m, &gfsr_k);
+   cout << rdum << endl; 
+
 }
 
 // vegas
-
 void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replace f[] by f(1)
            int init, unsigned long ncall, int itmx, int nprn,           // fxn(x, &f); /* call integrand at point x */
            double *tgralin, double *sdin, double *chi2ain)
@@ -394,3 +392,5 @@ void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replac
 #undef SR_Q
 #undef REPRO
 #undef TINY
+
+
