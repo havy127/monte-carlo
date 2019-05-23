@@ -20,7 +20,7 @@
  *     ndim: dimensionality of space
  *     (*fxn)(x[],f[]): pointer to function to be evaluated (must be MT-safe!)
  *     init: initialization level (start with 0, then 1, later 2)
- *     ncall: number of samples points per iteration
+ *     : number of samples points per iteration
  *     itmx: number of iterations in one call
  *     nprn: bit field, see constants NPRN_* below
  *     tgral[]: pointer to estimate of result (maybe array)
