@@ -1,0 +1,116 @@
+\documentclass[vietnamese]{vlththesis}
+\usepackage{tikz, amsmath}
+\usetikzlibrary{calc}
+
+
+\graphicspath{ {image/} }
+\addbibresource{bibbi.bib}
+\makenoidxglossaries
+
+\newacronym{lppl}{LPPL}{LaTeX Project Public License}
+\newacronym{tex}{\TeX}{Tau Epsilon Chi}
+\newacronym{wysiwyg}{WYSIWYG}{What you see is what you get}
+\newacronym{ctan}{CTAN}{Comprehensive \TeX\ Archive Network}
+\newacronym{ams}{AMS}{American Mathematical Society}
+\newacronym{isbn}{ISBN}{International Standard Book Number}
+\newacronym{lof}{LoF}{List of Figures}
+\newacronym{lot}{LoT}{List of Tables}
+\newacronym{toc}{ToC}{Table of Contents}
+
+\title{GIẢI TÍCH SỐ TÍCH PHÂN MONTE CARLO NHIỀU LỚP BẰNG GIEO ĐIỂM QUAN TRỌNG}
+\author{Huỳnh Thị Hạ Vy \\& }
+\supervisorName{TS. Nguyễn Chí Linh}
+
+\makeatletter
+\newcommand{\printtitlepage}{
+\thispagestyle{empty}
+	\begin{center}
+	{\bfseries\parskip=0pt
+	
+	\theGroup
+	\vspace*{0.1cm}
+	
+	\theUniversity
+	\vspace*{0.1cm}
+	
+	\theFaculty
+	\vspace*{0.1cm}
+	
+	\theDepartment\\
+	\vspace*{0.1cm}
+	------------------oOo------------------
+	}
+	\vspace*{1cm}
+	
+	{\bfseries
+	\large
+	\theReport}
+	
+	\vspace*{2cm plus 1cm minus 0.5cm}
+	
+	\iftoggle{viet}
+	{\begin{flushleft}
+		\textsl{\Large\underline{Đề tài:}}
+	\end{flushleft}}
+	{~}
+	{\huge\bfseries
+		\textcolor{cstred}{\@title}\par	
+	}
+	\end{center}
+	
+	\vspace*{2cm plus 1 cm minus 0.5cm}
+	
+	\hfill
+	{\bfseries\large
+	\iftoggle{viet}{%
+	\begin{tabular}{r l}
+	\underline{SVTH}: & \@author\\
+	\underline{CBHD}: & \thesupervisorName\\
+	\end{tabular}%
+	}{%
+	\begin{tabular}{r l}
+	\underline{Student}: & \@author\\
+	\underline{Supervisor}: & \thesupervisorName\\
+	\end{tabular}%
+	}}
+	
+	\vfill
+	\begin{center}
+	-----------------------------------------\\
+	\bfseries
+	\thePlace\ - \theDate
+	\end{center}
+	\clearpage
+
+
+}
+
+\makeatother
+
+
+\begin{document}
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 2pt] ($(current page.north west) + (1.1in,-1.1in)$) rectangle ($(current page.south east) + (-0.5in,0.9in)$);
+  \draw[line width = 2pt] ($(current page.north west) + (1.2in,-1.2in)$) rectangle ($(current page.south east) + (-0.6in,1in)$);
+\end{tikzpicture}
+\makeatletter
+\printtitlepage
+\makeatother
+\end{titlepage}
+
+\printcoverpage
+\acknowledgements{\input{chapter/acknowledgements}}
+\printfrontmatter
+
+\include{chapter/introduction}
+\fancyhead[L]{\slshape\nouppercase{\chaptertitlename\ \thechapter}}
+\include{chapter/chapter1}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+\include{chapter/chapter4}
+\thebackmatter
+\include{chapter/appendixA}
+\reference
+
+\end{document}

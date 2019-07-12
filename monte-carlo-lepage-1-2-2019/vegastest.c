@@ -43,46 +43,46 @@ double gfsr_norm;
 #define WIDTH 0.2
 void testfun(double x[DIMENSION], double f[FUNCTIONS])
 {
-  // double dummy, exponent, denominator;
-  // int i;
+   double dummy, exponent, denominator;
+   int i;
 
   /* Calculate the principal integrand for which the grid will be optimized
      provided MAINFUNC has been defined as 0 in the Vegas modules: */
-  // exponent = 0.0;
-  // denominator = 1.0;
-  // for (i=0; i<DIMENSION; ++i) {
-  //   /* if you run into this one, you are really in trouble: */
-  //   if (fabs(x[i])>=1) printf("Oh my god, x[%d]=%f\n",i,x[i]);
-  //   /* this is a kluge for atanh() which doesn't exist on some systems: */
-  //   dummy = 2*x[i]-1;
-  //   dummy = 0.5*log((1+dummy)/(1-dummy));
-  //   exponent -= dummy*dummy/2.0/WIDTH/WIDTH;
-  //   dummy = 2*x[i]-1;
-  //   denominator *= 1-dummy*dummy;
-  // }
-  // f[0] = exp(exponent)/denominator/pow(0.5*PI*WIDTH*WIDTH,(float)DIMENSION/2);
+   exponent = 0.0;
+   denominator = 1.0;
+   for (i=0; i<DIMENSION; ++i) {
+     /* if you run into this one, you are really in trouble: */
+   if (fabs(x[i])>=1) printf("Oh my god, x[%d]=%f\n",i,x[i]);
+     /* this is a kluge for atanh() which doesn't exist on some systems: */
+     dummy = 2*x[i]-1;
+     dummy = 0.5*log((1+dummy)/(1-dummy));
+     exponent -= dummy*dummy/2.0/WIDTH/WIDTH;
+     dummy = 2*x[i]-1;
+     denominator *= 1-dummy*dummy;
+ }
+  f[0] = exp(exponent)/denominator/pow(0.5*PI*WIDTH*WIDTH,(float)DIMENSION/2);
       //==============================================
       // f[0] = 1/(x[0]*x[0]+2*x[0]+2);
       //
-       f[0] = 1/((x[0]-0.75)*(x[0]-0.75)+1e-6) + 1/((x[0]-0.5)*(x[0]-0.5)+1e-6)+ 1/((x[0]-0.25)*(x[0]-0.25)+1e-6);
+       //f[0] = 1/((x[0]-0.75)*(x[0]-0.75)+1e-6) + 1/((x[0]-0.5)*(x[0]-0.5)+1e-6)+ 1/((x[0]-0.25)*(x[0]-0.25)+1e-6);
   //====================================================
   /* It is slightly impractical that C does not have range-checking. Please
    * change FUNCTIONS to 2, 3 or 4 above and in the Vegas-module to integrate
    * additional functions along with the principal function f[0]. */
-// #if (FUNCTIONS>1)
-//   /* To first approximation this is a slight shift towards positive x[0]
-//    * where the peak is located at 0.5237 instead of at 0.5000 but leaving the
-//    * integral unchanged apart from overall constant exp(1): */
-//   f[1] = f[0] * 2.718281828 * (12.0*x[0]-5.0);
-// #endif
-// #if (FUNCTIONS>2)
-//   /* similar to acc1, but shifted towards positive x[1], normalized to pi: */
-//   f[2] = f[0] * 3.141592654 * (12.0*x[1]-5.0);
-// #endif
-// #if (FUNCTIONS>3)
-//   /* 0.0 in half the volume, f[0] in other half, integral normalized to 1.0: */
-//   f[3] = (x[2]<0.5) ? (f[0]*2.0) : (0.0);
-// #endif
+ #if (FUNCTIONS>1)
+   /* To first approximation this is a slight shift towards positive x[0]
+    * where the peak is located at 0.5237 instead of at 0.5000 but leaving the
+* integral unchanged apart from overall constant exp(1): */
+   f[1] = f[0] * 2.718281828 * (12.0*x[0]-5.0);
+  #endif
+ #if (FUNCTIONS>2)
+   /* similar to acc1, but shifted towards positive x[1], normalized to pi: */
+   f[2] = f[0] * 3.141592654 * (12.0*x[1]-5.0);
+ #endif
+ #if (FUNCTIONS>3)
+   /* 0.0 in half the volume, f[0] in other half, integral normalized to 1.0: */
+  f[3] = (x[2]<0.5) ? (f[0]*2.0) : (0.0);
+ #endif
   return;
 }
 double myrand(unsigned int w[], int *k)

@@ -1,0 +1,62 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {vietnamese}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{C\IeC {\'a}c k\IeC {\'\i } hi\IeC {\d \ecircumflex }u vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{iii}{chapter*.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{iii}{section*.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Danh s\'ach b\h {a}ng}{iv}{section*.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{L\IeC {\`\ohorn }i gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{1}{chapter*.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Ki\IeC {\'\ecircumflex }n th\IeC {\'\uhorn }c c\IeC {\ohorn } s\IeC {\h \ohorn } x\IeC {\'a}c su\IeC {\'\acircumflex }t v\IeC {\`a} th\IeC {\'\ocircumflex }ng k\IeC {\^e}}{3}{chapter.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Bi\IeC {\'\ecircumflex }n ng\IeC {\~\acircumflex }u nhi\IeC {\^e}n v\IeC {\`a} x\IeC {\'a}c su\IeC {\'\acircumflex }t}{3}{section.1.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Ph\IeC {\^a}n ph\IeC {\'\ocircumflex }i x\IeC {\'a}c su\IeC {\'\acircumflex }t}{4}{section.1.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}H\IeC {\`a}m kh\IeC {\'\ocircumflex }i x\IeC {\'a}c su\IeC {\'\acircumflex }t c\IeC {\h u}a bi\IeC {\'\ecircumflex }n r\IeC {\`\ohorn }i r\IeC {\d a}c}{4}{subsection.1.2.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}H\IeC {\`a}m m\IeC {\d \acircumflex }t \IeC {\dj }\IeC {\d \ocircumflex } x\IeC {\'a}c su\IeC {\'\acircumflex }t c\IeC {\h u}a bi\IeC {\'\ecircumflex }n li\IeC {\^e}n t\IeC {\d u}c}{5}{subsection.1.2.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}K\IeC {\`y} v\IeC {\d o}ng v\IeC {\`a} ph\IeC {\uhorn }\IeC {\ohorn }ng sai}{6}{section.1.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}T\IeC {\'\i }ch ph\IeC {\^a}n Monte Carlo }{8}{chapter.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}T\IeC {\h \ocircumflex }ng qu\IeC {\'a}t}{8}{section.2.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}T\IeC {\'\i }ch ph\IeC {\^a}n Monte Carlo v\IeC {\'\ohorn }i h\IeC {\`a}m m\IeC {\d \acircumflex }t \IeC {\dj }\IeC {\d \ocircumflex } x\IeC {\'a}c su\IeC {\'\acircumflex }t \IeC {\dj }\IeC {\`\ecircumflex }u}{9}{section.2.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}T\IeC {\'\i }ch ph\IeC {\^a}n Monte Carlo v\IeC {\'\ohorn }i h\IeC {\`a}m m\IeC {\d \acircumflex }t \IeC {\dj }\IeC {\d \ocircumflex } x\IeC {\'a}c su\IeC {\'\acircumflex }t b\IeC {\'\acircumflex }t k\IeC {\`y}}{10}{section.2.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Gi\IeC {\h a}m ph\IeC {\uhorn }\IeC {\ohorn }ng sai}{11}{section.2.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n Vegas}{12}{chapter.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{12}{section.3.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}T\IeC {\'\i }ch ph\IeC {\^a}n Monte Carlo s\IeC {\h \uhorn } d\IeC {\d u}ng thu\IeC {\d \acircumflex }t to\IeC {\'a}n Vegas}{13}{section.3.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}L\IeC {\'\acircumflex }y m\IeC {\~\acircumflex }u tr\IeC {\d o}ng}{13}{subsection.3.2.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}L\IeC {\'\acircumflex }y m\IeC {\~\acircumflex }u ph\IeC {\^a}n t\IeC {\`\acircumflex }ng}{13}{subsection.3.2.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n Vegas}{14}{subsection.3.2.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{23}{chapter.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}K\IeC {\'\ecircumflex }t qu\IeC {\h a} \IeC {\dj }\IeC {\d a}t \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}{23}{section.4.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}X\IeC {\'e}t c\IeC {\'a}c h\IeC {\`a}m 1 chi\IeC {\`\ecircumflex }u}{23}{subsection.4.1.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}X\IeC {\'e}t c\IeC {\'a}c h\IeC {\`a}m 2 chi\IeC {\`\ecircumflex }u}{24}{subsection.4.1.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}X\IeC {\'e}t c\IeC {\'a}c h\IeC {\`a}m 3 chi\IeC {\`\ecircumflex }u}{24}{subsection.4.1.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.4}X\IeC {\'e}t c\IeC {\'a}c h\IeC {\`a}m 4 chi\IeC {\`\ecircumflex }u}{25}{subsection.4.1.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{25}{section.4.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{26}{section.4.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Ph\IeC {\`\acircumflex }n code \IeC {\dj }\IeC {\`\acircumflex }y \IeC {\dj }\IeC {\h u}}{27}{appendix.A}% 

@@ -1,0 +1,27 @@
+\documentclass[vietnamese]{myclass}
+
+\graphicspath{ {image/} }
+\addbibresource{bibbi.bib}
+\makenoidxglossaries
+
+\newacronym{lppl}{LPPL}{LaTeX Project Public License}
+\newacronym{tex}{\TeX}{Tau Epsilon Chi}
+\newacronym{wysiwyg}{WYSIWYG}{What you see is what you get}
+\newacronym{ctan}{CTAN}{Comprehensive \TeX\ Archive Network}
+
+\title{THIẾT KẾ LUẬN VĂN, BÀI BÁO CÁO SỬ DỤNG HỆ THỐNG \LaTeX}
+\author{Trịnh Tích Thiện}
+\supervisorName{TS. Nguyễn Chí Linh}
+
+\begin{document}
+\printcoverpage
+%\acknowledgements{\input{chapter/acknowledgements}}
+\printfrontmatter
+
+%\include{chapter/introduction}
+\include{chapter/chapter1}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+%\thebackmatter
+\reference
+\end{document}

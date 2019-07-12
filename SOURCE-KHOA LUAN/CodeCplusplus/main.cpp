@@ -7,11 +7,13 @@
 #include "vegas.h"
 using namespace std;
 
+
 static int gfsr_not_initialized = 1; /* flag: need to initialize GFSR-field */
 unsigned int gfsr_m[SR_P];           /* status-field for the GFSR-generator          */
 int gfsr_k;                          /* pointer into status-field                    */
 unsigned int rdum;                   /* linear congruential counter in kw_rand()     */
 double gfsr_normn;
+int functions;  
 
 double gfsr_rand(unsigned int w[], int *k)
 {
@@ -46,6 +48,157 @@ void gfsr_init(long seed)
     gfsr_not_initialized = 0;
 }
 
+//rebin(ndo / xnd, nd, r, xin, xi[j]); 
+void rebin(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
+{
+    int i;
+    int k = 0;
+    double residues = 0.0;
+    double xn = 0.0;
+    double xo = 0.0;
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/residues.txt";
+    // const char *filePath2 = "C:/Users/Ha Vy/Desktop/success_test/xin.txt";
+    FILE *file1;
+    // FILE *file2;
+	file1 = fopen(filePath1, "w+");
+	// file2 = fopen(filePath2, "w+");
+    for (i = 0; i < nd - 1; i++)
+    {
+        while (wgt_avg > residues)
+        {
+            residues += wgt[k++];
+        }
+        if (k > 1)
+            xo = xi[k - 2];
+        xn = xi[k - 1];
+        residues -= wgt_avg; //residues of accummulate weights up to bin k-1
+        xin[i] = xn - (xn - xo) * residues / wgt[k - 1];
+        fprintf(file1, "%lf\n",  residues);
+    }
+    for (i = 0; i < nd - 1; i++){
+        xi[i] = xin[i];
+        // fprintf(file2, "%f\n",  xi[i]);
+    }
+    xi[nd - 1] = 1.0;
+    fclose(file1);
+    // fclose(file2);
+}
+void rebin1(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
+{
+    int i;
+    int k = 0;
+    double residues = 0.0;
+    double xn = 0.0;
+    double xo = 0.0;
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/1dim.txt";
+    FILE *file1;
+	file1 = fopen(filePath1, "w+");
+    for (i = 0; i < nd - 1; i++)
+    {
+        while (wgt_avg > residues)
+        {
+            residues += wgt[k++];
+        }
+        if (k > 1)
+            xo = xi[k - 2];
+        xn = xi[k - 1];
+        residues -= wgt_avg; //residues of accummulate weights up to bin k-1
+        xin[i] = xn - (xn - xo) * residues / wgt[k - 1];
+    }
+    for (i = 0; i < nd - 1; i++){
+        xi[i] = xin[i];
+        fprintf(file1, "%f\n",  xi[i]);
+    }
+    xi[nd - 1] = 1.0;
+    fclose(file1);
+}
+void rebin2(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
+{
+    int i;
+    int k = 0;
+    double residues = 0.0;
+    double xn = 0.0;
+    double xo = 0.0;
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/2dim.txt";
+    FILE *file1;
+	file1 = fopen(filePath1, "w+");
+    for (i = 0; i < nd - 1; i++)
+    {
+        while (wgt_avg > residues)
+        {
+            residues += wgt[k++];
+        }
+        if (k > 1)
+            xo = xi[k - 2];
+        xn = xi[k - 1];
+        residues -= wgt_avg; //residues of accummulate weights up to bin k-1
+        xin[i] = xn - (xn - xo) * residues / wgt[k - 1];
+    }
+    for (i = 0; i < nd - 1; i++){
+        xi[i] = xin[i];
+        fprintf(file1, "%f\n",  xi[i]);
+    }
+    xi[nd - 1] = 1.0;
+    fclose(file1);
+}
+void rebin3(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
+{
+    int i;
+    int k = 0;
+    double residues = 0.0;
+    double xn = 0.0;
+    double xo = 0.0;
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/3dim.txt";
+    FILE *file1;
+	file1 = fopen(filePath1, "w+");
+    for (i = 0; i < nd - 1; i++)
+    {
+        while (wgt_avg > residues)
+        {
+            residues += wgt[k++];
+        }
+        if (k > 1)
+            xo = xi[k - 2];
+        xn = xi[k - 1];
+        residues -= wgt_avg; //residues of accummulate weights up to bin k-1
+        xin[i] = xn - (xn - xo) * residues / wgt[k - 1];
+    }
+    for (i = 0; i < nd - 1; i++){
+        xi[i] = xin[i];
+        fprintf(file1, "%f\n",  xi[i]);
+    }
+    xi[nd - 1] = 1.0;
+    fclose(file1);
+}
+void rebin4(double wgt_avg, int nd, double wgt[], double xin[], double xi[])
+{
+    int i;
+    int k = 0;
+    double residues = 0.0;
+    double xn = 0.0;
+    double xo = 0.0;
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/4dim.txt";
+    FILE *file1;
+	file1 = fopen(filePath1, "w+");
+    for (i = 0; i < nd - 1; i++)
+    {
+        while (wgt_avg > residues)
+        {
+            residues += wgt[k++];
+        }
+        if (k > 1)
+            xo = xi[k - 2];
+        xn = xi[k - 1];
+        residues -= wgt_avg; //residues of accummulate weights up to bin k-1
+        xin[i] = xn - (xn - xo) * residues / wgt[k - 1];
+    }
+    for (i = 0; i < nd - 1; i++){
+        xi[i] = xin[i];
+        fprintf(file1, "%f\n",  xi[i]);
+    }
+    xi[nd - 1] = 1.0;
+    fclose(file1);
+}
 //Test random number
 void randomNumberTest()
 {
@@ -56,10 +209,352 @@ void randomNumberTest()
     cout << num << endl;
 }
 
+void vegas(double regn[], int ndim, void (*fxn)(double x[], double *f), //replace f[] by f(1)
+           int init, unsigned long ncall, int itmx, int nprn,           // fxn(x, &f); /* call integrand at point x */
+           double *tgralin, double *sdin, double *chi2ain)
+{
+    const char *filePath1 = "C:/Users/Ha Vy/Desktop/success_test/r_vector.txt";
+    FILE *file1;
+	file1 = fopen(filePath1, "w+");
+    double tgral, sd, chi2a;
+    static int ndo;   /*                                    (ndo)     */
+    int it;           /* iteration counter                  (it)      */
+    static int ittot; /* iteration counter across init>1              */
+    int i, j, k;      /* counters                           (i, j, k) */
+    int nd;           /* slices in grid (c.f. NDMX)         (nd)      */
+    int ng;           /* real number of bins on an axis     (ng)      */
+    unsigned int npg; /* number of calls within bin         (npg)     */
+    static int mds;   /* ==1: statified smpl.               (mds)     */
+    int ia[MXDIM];    /* index of bin (ng bin per axis)     (ia[])    */
+    int kg[MXDIM];    /* contral npg calls locate same bin  (kg[])    */
+    double calls;     /* real total number of calls to fxn  (calls)   */
+    double dv2g;      /*                                    (dv2g)    */
+    double dxg;       /* ratio of number of grids per bins  (dxg)     */
+    double rc;        /*                                    (rc)      */
+    double wgt;       /* weight                             (wgt)     */
+    double xn;        /*                                    (xn)      */
+    double xnd;       /* another name of nd                 (xnd)     */
+    double xo;        /*                                    (xo)      */
+    double xJac;      /* Jacobian of integration            (xjac)    */
+    typedef struct
+    {
+        double Wgt;     /* weight                             (wgt)     */
+        double sWgt;    /* cumulative sum for weights         (swgt)    */
+        double sChi;    /* cumulative sum for chi^2           (schi)    */
+        double sInt;    /* cumulative sum for integral        (si)      */
+    } iterAccu;         /* accumulator for stuff at end of iteration... */
+    static iterAccu Ai; /* ...for integrand                             */
+    typedef struct
+    {
+        double ti;  /* sum for f over bins                (ti)      */
+        double tsi; /* sum for variances over bins        (tsi)     */
+    } binAccu;      /* accumulator over bins / hypercubes...        */
+    binAccu Ab;     /* ...for integrand                             */
+    typedef struct
+    {
+        double f2;                 /* f squared                          (f2)      */
+        double fb;                 /* sum for f within bin               (fb)      */
+        double f2b;                /* sum for f2 within bin              (f2b)     */
+        unsigned long npg;         /* number of calls within bin f != 0            */
+    } pointAccu;                   /* accumulator over points x within bins...     */
+    pointAccu Ax;                  /* ...for integrand                             */
+    double f;                      /* passed into fxn for evaluation at x          */
+    double x[MXDIM];               /* evaluation point                   (x[])     */
+    double d[NDMX][MXDIM];         /*                                    (d[][])   */
+    double di[NDMX][MXDIM];        /* delta i                            (di[][])  */
+    double dt[MXDIM];              /*                                    (dt[])    */
+    double r[NDMX];                /*                                    (r[])     */
+    static double xi[MXDIM][NDMX]; /*                                    (xi[][])  */
+    double xin[NDMX];              /* aux. variable for rebinning        (xin[])   */
+    double dx[MXDIM];              /* width of integration region        (dx[])    */
+    double xrand;                  /* uniform dens 0.0 <= xrand < 1.0   (xrand)   */
+
+#if (REPRO != 0)
+
+    if (gfsr_not_initialized)
+        gfsr_init(REPRO);
+#else
+    if (gfsr_not_initialized)
+        gfsr_init((long)time(NULL));
+#endif
+    if (init <= 0)
+    { /* entry for cold start        */
+        mds = ndo = 1;
+        for (j = 0; j < ndim; j++)
+            xi[j][0] = 1.0;
+    }
+    if (init <= 1)
+    { /* inherit the previous grid   */
+        Ai.sInt = 0.0;
+        Ai.sWgt = 0.0;
+        Ai.sChi = 0.0;
+        ittot = 1;
+    }
+    if (init <= 2)
+    { /* inherit grid and results    */
+        nd = NDMX;
+        ng = 1;
+        if (mds)
+        {
+            ng = (int)pow(ncall / 2.0 + 0.25, 1.0 / ndim); // M=2N^n; ng <-- N
+            mds = 1;                                       //concentrate subintervals where integrand is largest in magnitude
+            if ((2 * ng - NDMX) >= 0)
+            {
+                mds = -1; //concentrate subintervals where integrand is largest in error (sigma)
+                npg = ng / NDMX + 1;
+                nd = ng / npg; // nd= so bin / so diem trong 1 bin 
+                ng = npg * nd;
+            }
+        }
+        //==================================
+        for (k = 1, i = 0; i < ndim; i++)
+            k *= ng; // k <-- ng^ndim // k = tổng ô của lưới
+        npg = (ncall / k > 2) ? (ncall / k) : (2); // npg = 2 , số điểm của 1 bin
+        calls = (double)npg * (double)k; // calls: tổng số điểm gieo
+        dxg = 1.0 / ng; // 1/N bên trong công thưc 1/Ndeltaxi
+        for (dv2g = 1, i = 0; i < ndim; i++)
+            dv2g *= dxg;
+        // dv2g = calls * calls * dv2g * dv2g / npg / npg / (npg - 1.0); //dv2g <-- (npg.ng^ndim)^2/ngp^2/ng^(2ndim)/(npg-1)
+        dv2g = 1/(npg-1);
+        xnd = nd;
+        dxg *= xnd; // dxg <-- nd/ng
+        xJac = 1.0 / calls;
+        for (j = 0; j < ndim; j++)
+        {
+            dx[j] = regn[j + ndim] - regn[j]; // độ dài của 1 miền (b-a)
+            xJac *= dx[j];
+        }
+        //==> xJac = 1/(calls*(b-a)*(d-c)*....)
+        // khởi tạo lưới
+        if (nd != ndo)
+        { //ndo=1 at this step: initialize bin
+            for (i = 0; i < (nd > ndo ? nd : ndo); i++)
+                r[i] = 1.0;
+            for (j = 0; j < ndim; j++)
+                rebin(ndo / xnd, nd, r, xin, xi[j]);
+            ndo = nd; //number of subdivisions on an axis
+        }
+        // chỉ để output các thông số
+        if (nprn & NPRN_INPUT)
+        {
+            printf("%s:  ndim= %3d  ncall= %8.0f\n",
+                   " Input parameters for vegas", ndim, calls);
+            printf("%28s  ittot=%5d  itmx=%5d\n", " ", ittot, itmx);
+            printf("%28s  nprn=0x%04x  ALPH=%5.2f\n", " ", nprn, ALPH);
+            printf("%28s  mds=%3d  nd=%4d%15s npg=%d\n", " ", mds, nd, " ", npg);
+            for (j = 0; j < ndim; j++)
+            {
+                printf("%30s xl[%2d]= %11.4g xu[%2d]= %11.4g\n",
+                       " ", j, regn[j], j, regn[j + ndim]);
+            }
+        }
+    }
+    for (it = ittot; it <= itmx + ittot - 1; it++)
+    {
+        Ab.ti = Ab.tsi = 0.0;
+        for (j = 0; j < ndim; j++)
+        {
+            kg[j] = 1; // gán bằng 1 chạy theo số chiều 
+            for (i = 0; i < nd; i++)
+                d[i][j] = di[i][j] = 0.0; // gán mãng d[i][ndim] == 0 
+        }
+        // printf("\n=====%d\n",npg);
+        printf("\n====dxg=%lf\n",dxg);
+        xrand = gfsr_rand(gfsr_m, &gfsr_k);
+        printf("\n===xrand*dxg==%lf\n",(kg[0] - xrand) * dxg + 1.0);
+        for (;;)
+        {
+            Ax.fb = 0.0; //refresh to start a hypercube
+            Ax.f2b = 0.0;
+            Ax.npg = 0;
+            for (k = 0; k < npg; k++)
+            {
+                wgt = xJac;
+                for (j = 0; j < ndim; j++)
+                {
+                    xrand = gfsr_rand(gfsr_m, &gfsr_k); //uniform random number, prob <--1/ng
+                    xn = (kg[j] - xrand) * dxg + 1.0;   //1<kg[j]<=ng,  ng bin per axis
+                    ia[j] = ((int)xn < NDMX) ? ((int)xn) : (NDMX); //gán chỉ số của bin ==1 OR NDMX
+                    ia[j] = (ia[j] > 1) ? (ia[j]) : (1);
+                    if (ia[j] > 1)
+                    {
+                        xo = xi[j][ia[j] - 1] - xi[j][ia[j] - 2];
+                        rc = xi[j][ia[j] - 2] + (xn - ia[j]) * xo;
+                    }
+                    else // chỉ số ai = 0
+                    {
+                        xo = xi[j][ia[j] - 1];
+                        rc = (xn - ia[j]) * xo;
+                    }
+                    x[j] = regn[j] + rc * dx[j];
+                    wgt *= xo * xnd; // ??? p(xrand)dxrand = p(rc)drc  ???, where p(xrand) = 1/ng
+                }
+                fxn(x, &f); /* call integrand at point x */
+                if (f != 0.0)
+                    ++Ax.npg;
+                f *= wgt; // contribution of x to I
+                Ax.f2 = f * f;
+                Ax.fb += f; //sum over npg points whithin hypercube-->contribution of an hypercube to I
+                Ax.f2b += Ax.f2;
+                for (j = 0; j < ndim; j++)
+                {
+                    di[ia[j] - 1][j] += f;
+                    if (mds >= 0)
+                        d[ia[j] - 1][j] += Ax.f2; //sum up npg magnitude f2 whithin each bin of a hypercube
+                }
+            } /* end of loop within hypercube */
+            Ax.f2b = sqrt(Ax.f2b * Ax.npg);
+            Ax.f2b = (Ax.f2b - Ax.fb) * (Ax.f2b + Ax.fb); //sum{aCube}{f^2}-(sum{aCube}f)^2-->sigma^2 acube
+            if (Ax.f2b <= 0.0)
+                Ax.f2b = TINY;
+            Ab.ti += Ax.fb;   //sum over hypercubes --> sum{over calls points}f --> I of an iteration
+            Ab.tsi += Ax.f2b; //sum(cubes){sigma^2 of cube) --> sigtot^2 of an iteration
+            if (mds < 0)
+            {
+                for (j = 0; j < ndim; j++)
+                    d[ia[j] - 1][j] += Ax.f2b; //sum(over cubs per bin){sigma^2)-->sigbin^2
+            }
+            for (k = ndim - 1; k >= 0; k--)
+            {
+                kg[k] %= ng; //create kg[k]: 1<=kg[k]<=ng; ng^ndim values (equal or none)
+                if (++kg[k] != 1)
+                    break;
+            }
+            if (k < 0)
+                break;
+        } /* end of loop over hypercubes */
+        Ab.tsi *= dv2g;
+        Ai.Wgt = 1.0 / Ab.tsi;             // ~ 1/(sigtot_i)^2 of iteration ith
+        Ai.sInt += Ai.Wgt * Ab.ti;         // ~ sum(iteration){I_i/(sigtot_i)^2}
+        Ai.sChi += Ai.Wgt * Ab.ti * Ab.ti; // ~ sum(iteration){(I_i)^2/(sigtot_i)^2}
+        Ai.sWgt += Ai.Wgt;                 // ~ sum(iteration){1/(sigtot_i)^2}-->1/sigI^2
+        tgral = Ai.sInt / Ai.sWgt;         //~sigI^2.sum(iteration){I_i/(sigtot_i)^2}
+        chi2a = (Ai.sChi - Ai.sInt * tgral) / (it - 0.9999);
+        if (chi2a < 0.0)
+            chi2a = 0.0;
+        sd = sqrt(1.0 / Ai.sWgt); //sigI^2
+        Ab.tsi = sqrt(Ab.tsi);
+        *sdin = sd;
+        *tgralin = tgral;
+        *chi2ain = chi2a;
+        if (nprn & NPRN_RESULT)
+        {
+            printf("%s %3d : integral = %14.7g +/-  %9.2g\n",
+                   " iteration no.", it, Ab.ti, Ab.tsi);
+            printf("%s integral =%14.7g+/-%9.2g  chi^2/IT n = %9.2g\n",
+                   " all iterations:  ", tgral, sd, chi2a);
+        }
+        if (nprn & (NPRN_GRID | NPRN_GRID_2 | NPRN_GRID_4 | NPRN_GRID_8))
+        {
+            for (j = 0; j < ndim; j++)
+            {
+                printf(" data for axis  %2d\n", j);
+                printf("%6s%13s%11s%13s%11s%13s\n",
+                       "X", "delta i", "X", "delta i", "X", "delta i");
+                for (i = 0; i < nd; i += 3)
+                {
+                    for (k = 0; k < 3 && i + k < nd; k++)
+                    {
+                        printf("%8.5f%12.4g    ", xi[j][i + k], di[i + k][j]);
+                    }
+                    printf("\n");
+                    if (nprn & NPRN_GRID_8)
+                        k = 3 * (8 - 1);
+                    if (nprn & NPRN_GRID_4)
+                        k = 3 * (4 - 1);
+                    if (nprn & NPRN_GRID_2)
+                        k = 3 * (2 - 1);
+                    if (nprn & NPRN_GRID)
+                        k = 3 * (1 - 1);
+                    i += k;
+                }
+            }
+        }
+        if (nprn)
+            fflush(NULL);
+        for (j = 0; j < ndim; j++)
+        {
+            xo = d[0][j];              //sigb0
+            xn = d[1][j];              //sigb1
+            d[0][j] = (xo + xn) / 2.0; //(sigb0+sigb1)/2
+            dt[j] = d[0][j];           //(sigb0+sigb1)/2
+            for (i = 1; i < nd - 1; i++)
+            {
+                rc = xo + xn;
+                xo = xn;
+                xn = d[i + 1][j];
+                d[i][j] = (rc + xn) / 3.0; //(sigb{i-1}+sigbi+sigb{i+1})/3
+                dt[j] += d[i][j];
+            }
+            d[nd - 1][j] = (xo + xn) / 2.0; //(sigb{nd-1}+sigbnd)/2
+            dt[j] += d[nd - 1][j];          //(sigb0+sigb1)/2+..(sigb{i-1}+sigbi+sigb{i+1})/3+..(sigb{nd-1}+sigbnd)/2
+        }
+        //sau khi co cac thong so, tính mi và rebin
+        for (j = 0; j < ndim; j++)
+        {
+            rc = 0.0;
+            for (i = 0; i < nd; i++)
+            {
+                if (d[i][j] < TINY)
+                    d[i][j] = TINY;
+                r[i] = pow((1.0 - d[i][j] / dt[j]) / (log(dt[j]) - log(d[i][j])),ALPH); //sigbi contribution of bin ith in sumsigbin
+                
+                rc += r[i];
+            }
+             rebin(rc / xnd, nd, r, xin, xi[j]); //rebin wrt input ratio sigbi/sumsigbin
+             printf("\nxnd == %lf\tnd == %d \n", xnd,nd);
+            // switch (j)
+            // {
+            // case 0: /* constant-expression */
+            //     rebin1(rc / xnd, nd, r, xin, xi[j]);
+            //     break;
+            // case 1: /* constant-expression */
+            //     rebin2(rc / xnd, nd, r, xin, xi[j]);
+            //     break;
+            // case 2: /* constant-expression */
+            //     rebin3(rc / xnd, nd, r, xin, xi[j]);
+            //     break;
+            // default:
+            //     break;
+            // }
+            // printf("\nrc == %lf\n", rc);
+            // printf("\nxnd== %lf\n", xnd);
+            // printf("\nrc / xnd== %lf\n", rc/xnd);
+           
+        }
+    }
+    ittot += itmx;
+    fclose(file1);
+}
+void testfun(double x[DIMENSION], double f[FUNCTIONS])
+{
+    //f[0] = 1 / ((x[0] - 0.75) * (x[0] - 0.75) + 1e-6) + 1 / ((x[0] - 0.5) * (x[0] - 0.5) + 1e-6) + 1 / ((x[0] - 0.25) * (x[0] - 0.25) + 1e-6);
+    //f[0] = 1/(x[0]*x[1]*x[2]*x[3]);
+    //f[0] = 1/(x[0]*x[1]*x[2]);
+    //f[0] = 1/(x[0]);
+    f[0]= 1/x[0] + 20*(exp(-pow(10,4)*(x[0]-1)*(x[0]-1))); // have a high peak
+    return;
+}
 int main()
 {
 
-    randomNumberTest();
+    int i;
+    double estim[FUNCTIONS];   /* estimators for integrals                     */
+    double std_dev[FUNCTIONS]; /* standard deviations                          */
+    double chi2a[FUNCTIONS];   /* chi^2/n                                      */
+    double reg[2 * DIMENSION]; /* integration domain                           */
+
+    for (i = 0; i < DIMENSION; i++)
+    {
+        //
+        reg[i] = 0.0000000000;
+        reg[i + DIMENSION] = 1;
+    }
+
+    vegas(reg, DIMENSION, testfun, 0, 1000, 50, NPRN_INPUT | NPRN_RESULT, estim, std_dev, chi2a);
+    vegas(reg, DIMENSION, testfun, 1, 10000, 100, NPRN_INPUT | NPRN_RESULT, estim, std_dev, chi2a);
+    printf ("Result: %g +/- %g\n", estim[0], std_dev[0]);
+    //randomNumberTest();
 
     return 0;
 }

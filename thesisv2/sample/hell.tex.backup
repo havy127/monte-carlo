@@ -1,0 +1,15 @@
+\documentclass{book}
+%  \usepackage{graphicx}
+% \usepackage{float}
+
+
+\begin{document}
+% \thispagestyle{empty}
+% \begin{figure}[H]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{logo}
+%  \caption{Example for caption, this caption have to be long so that to have line break, it holds no meaning if you read it} 
+% \end{figure}
+\tableofcontents 
+ 
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass{beamer}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usetheme{AnnArbor}
+\usecolortheme{beaver}
+\usepackage{scrextend}
+
+\title[Giải tích số tích phân Monte Carlo nhiều lớp bằng gieo điểm quan trọng]{Đại học Khoa học Tự nhiên\\
+Khoa Vật lý Vật lý Kỹ thuật\\
+Bộ môn Vật lý Tin học }
+\author[Vật lý Tin học]{ \color[rgb]{0.20,0.60,1.0} \Large GIẢI TÍCH SỐ TÍCH PHÂN MONTE CARLO NHIỀU LỚP BẰNG GIEO ĐIỂM QUAN TRỌNG}
+% (optional, for multiple authors)
+ \institute[] % (optional)
+{
+  \inst{}%
+  \textbf{CBHD}: TS. Nguyễn Chí Linh
+  \and
+  \inst{}%
+  \textbf{SVTH}: Huỳnh Thị Hạ Vy
+}
+\date[12/07/2019]% (optional)
+{}
+
+
+\begin{document}
+ 
+\frame{\titlepage}
+\begin{frame}{Nội dung báo cáo}
+\fontsize{13pt}{40pt}
+\begin{enumerate}
+\item Giới thiệu 
+\item Tích phân Monte Carlo
+\item Thuật toán Vegas
+\item Kết luận và hướng phát triển
+\end{enumerate}
+\end{frame}
+
+%introduce
+\begin{frame}{Giới thiệu}\vspace{4pt}
+\color[rgb]{0.20,0.60,1.0} {Giới thiệu đề tài}\\
+\vspace{0.5em}
+\color[rgb]{0.0,0.00,0.0}
+Tích phân là phép tính quan trọng trong lĩnh vực giải tích. Phương pháp tích phân Monte Carlo
+là phương pháp sử dụng số ngẫu nhiên để tính toán kết quả gần đúng của tích phân. 
+Để giảm phương sai cho tích phân, thuật toán Vegas xử lý các bài toán tích phân đa chiều.
+Thuật toán Vegas sử dụng hai phương pháp lấy mẫu có trọng tâm và phương pháp phân tầng để giảm phương sai tăng độ chính xác cho phép tính.
+\end{frame}
+%Monte Carlo Integrand
+
+\begin{frame}{Tích phân Monte Carlo}\vspace{4pt}
+  \textbf{Tích phân một chiều}
+  \begin{align}
+  I=\int_{a}^{b}{f(x)dx}
+\end{align}
+
+  Ước tính giá trị của tích phân: 
+  \begin{align}
+  E(I) = (b-a)\langle{f}\rangle = \frac{b-a}{N}{\sum_{i=0}^{M-1}{f(x_i)}}
+\end{align}
+Trong đó:\\
+  \vspace{1em}
+  $x_i$: các giá trị lấy ngẫu nhiên phân bố đều trong khoảng [a,b]\\
+  M: tổng số lần lấy mẫu $x_i$\\
+\end{frame}
+
+\begin{frame}{Tích phân Monte Carlo}\vspace{4pt}
+\textbf{Tích phân một chiều}\\
+\vspace{4em}
+  Phương sai: 
+\begin{align}
+  \sigma^2(E(I)) = \frac{V}{M}\sum_{i=1}^M{(f(x_i)-\langle{f}\rangle)^2}
+\end{align}
+Với số mẫu M thì phương sai giảm theo $\frac{1}{N}$. Suy ra $\sigma \sim \frac{1}{\sqrt{N}}$\\
+\vspace{0.5em}
+Trong đó: 
+$V=\int_{a}^{b}{dx}$: thể tích mở rộng của tích phân nhiều chiều\\
+\end{frame}
+
+\begin{frame}{Tích phân Monte Carlo}\vspace{4pt}
+  \textbf{Tích phân Monte Carlo với hàm phân bố xác suất bất kỳ}\\
+  \vspace{4em}
+    Phương sai: 
+  \begin{align}
+    \langle{f}\rangle=\frac{1}{M}\sum_{i=0}^{M-1}{\frac{f(x_i)}{p(x_i)}}
+  \end{align}
+  \vspace{0.5em}
+  Trong đó: 
+  $p(x_i)$: hàm phân bố của biến ngẫu nhiên $x_i$\\
+  \end{frame}
+% Thuật toán Vegas
+
+
+\end{document}

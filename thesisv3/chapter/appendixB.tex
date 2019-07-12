@@ -1,0 +1,84 @@
+\chapter{Trích đoạn tập tin đầu vào \LaTeX\ của đề tài}\label{append:B}
+\lstset{escapeinside={(*}{*)},frame=none}
+Mục này bao gồm các trích đoạn của tập tin đầu vào LaTeX của báo cáo này, đóng vai trò như ví dụ sử dụng cho file class sản phẩm.
+Dưới đây là tập tin \path|main.tex|.\par~\par
+\begin{lstlisting}[frame=single]
+\documentclass[vietnamese]{vlththesis}
+
+\graphicspath{ {image/} }
+\addbibresource{bibbi.bib}
+\makenoidxglossaries
+
+\newacronym{lppl}{LPPL}{LaTeX Project Public License}
+\newacronym{tex}{\TeX}{Tau Epsilon Chi}
+\newacronym{wysiwyg}{WYSIWYG}{What you see is what you get}
+\newacronym{ctan}{CTAN}{Comprehensive \TeX\ Archive Network}
+\newacronym{ams}{AMS}{American Mathematical Society}
+\newacronym{isbn}{ISBN}{International Standard Book Number}
+\newacronym{lof}{LoF}{List of Figures}
+\newacronym{lot}{LoT}{List of Tables}
+\newacronym{toc}{ToC}{Table of Contents}
+
+\title{(*THIẾT KẾ LUẬN VĂN, BÀI BÁO CÁO SỬ DỤNG HỆ THỐNG \LaTeX*)}
+\author{(*Trịnh Tích Thiện*)}
+\supervisorName{(*TS. Nguyễn Chí Linh*)}
+
+\begin{document}
+\printcoverpage
+\acknowledgements{\input{chapter/acknowledgements}}
+\printfrontmatter
+
+\include{chapter/introduction}
+\fancyhead[L]{\slshape\nouppercase{\chaptertitlename\ \thechapter}}
+\include{chapter/chapter1}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+\include{chapter/chapter4}
+\thebackmatter
+\include{chapter/appendixA}
+\include{chapter/appendixB}
+
+\reference
+\end{document}
+\end{lstlisting}
+
+Đối với các văn bản phức tạp, ta nên phân các chương hồi ra nhiều tập tin \verb|.tex| khác nhau, sau đó sử dụng câu lệnh \path|\include|
+hoặc \path|\input| (lưu ý khác với \path|\input|, \path|\include| sẽ sử dụng \path|\clearpage| trước khi tích hợp tập tin). Việc này
+giúp ta dễ dàng kiểm soát nội dung của từng chương và cô lập lỗi phát sinh.\par
+Dưới đây là trích đoạn tập tin \path|acknowledgements.tex|.\par~\par
+\begin{lstlisting}
+(*Đầu tiên, con xin gửi lời biết ơn đến mẹ, người đã thay thế vai trò người cha đã mất, cáng đáng cả gia đình và nuôi
+dưỡng con nên người, con cũng xin cảm ơn dì Chính, người mà còn vẫn luôn coi như người mẹ thứ hai, chăm sóc con từng
+miếng ăn, giấc ngủ và luôn coi con như con ruột của mình, công ơn của hai mẹ dành cho con không từ ngữ nào mà diễn tả được.*)\par
+(*Em xin cảm ơn các thầy cô khoa Vật Lý - Vật Lý Kĩ Thuật, đã tận tâm truyền đạt kiến thức cho em trong những năm đầu đại học.
+Em xin chân thành cảm ơn thầy cô của Bộ môn Vật Lý Tin Học, đã xây dựng bộ môn với các trang thiết bị hiện đại và sự nhiệt
+tình, thân thiện của các thầy cô, giúp em có thể thoái mái học tập, nghiên cứu mà không cảm thấy căng thẳng, áp lực. 
+Những lời chỉ bảo của thầy cô đã cho em những kiến thức cần thiết và quý báu cho định hướng của mình.*)\par
+\end{lstlisting}
+
+Tiếp theo là trích đoạn tập tin \path|introduction.tex|.\par~\par
+\begin{lstlisting}
+\startintroduction
+\fancyhead[L]{}
+(*Ngày nay, ngoài các trình soạn thảo văn bản phổ biến, LaTeX cũng là một sự lựa chọn dành cho người soạn thảo được
+tạo ra với triết lý hoàn toàn khác biệt so với các trình hiện hành. Nhận thấy hạn chế của chất lượng in ấn lúc bấy 
+giờ, và việc người dùng tốn quá nhiều thời gian để định dạng thay vì tập trung soạn thảo, Donald E.Knuth đã phát
+triển hệ thống TeX, và từ đó, Leslie Lamport xây dựng thành LaTeX, với mục đích giúp người dùng sử dụng câu
+lệnh để việc thiết kế văn bản được thực hiện một cách tự động bởi hệ thống.*) \par 
+\end{lstlisting}
+
+Và cuối cùng là trích đoạn của tập tin \path|chapter1.tex|, các chapter và phụ lục (appendix) cũng có kiểu trình bày ban đầu tương tự.\par~\par
+\begin{lstlisting}
+\chapter{(*Tổng quan về*) \LaTeX}\label{ch:1}
+(*Khác với quan niệm của nhiều người, LaTeX*) \emph{(*không phải*)} (*là chương trình hay hệ thống xử lý 
+văn bản (document processor). Trong chương này, ta sẽ nói về định nghĩa và lịch sử của LaTeX và 
+cả TeX , nền tảng mà nó dựa trên.*)\par
+\section{\LaTeX\ (*là gì?*)}\label{sec:1.1}
+(*LaTeX (phiên âm La-téch hoặc Lây-téch) là hệ thống trình bày văn bản (document preparation 
+system)*)\cite{latex-pro}, (*được sử dụng phổ biến trong cộng đồng khoa học và học thuật để soạn thảo,
+trình bày các văn bản khoa học, kĩ thuật. Hiện nay, các nhà khoa học trao đổi tài liệu của họ dưới
+dạng mã LaTeX*) \cite{lamport}. (*Ngoài lĩnh vực học thuật, LaTeX còn được sử dụng để viết các thư 
+từ doanh nghiệp hoặc cá nhân, tin tức, các bài báo, sách và nhiều lĩnh vực khác.*)\par
+\end{lstlisting}
+
+

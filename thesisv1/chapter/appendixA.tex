@@ -1,0 +1,156 @@
+\chapter{Định nghĩa đầy đủ của câu lệnh}\label{append:A}
+\lstset{escapeinside={(*}{*)}, frame=single}
+
+Định nghĩa đầy đủ của hai câu lệnh \path|\printcoverpage| và \path|\printfrontmatter| ở phần \ref{sec:3.3.3} sẽ được nêu chi tiết ở phần này.
+Như đã nói ở mục đó, \path|\printcoverpage| sử dụng các macro được định nghĩa riêng trong lớp và các câu lệnh để xây dựng trang bìa.
+Dưới đây là phần định nghĩa của các macro nói trên.\par~\par
+\begin{lstlisting}[firstnumber=183]
+\iftoggle{viet}{%
+	\def\theGroup{(*ĐẠI HỌC QUỐC GIA TP.HỒ CHÍ MINH*)}%
+}{%
+	\def\theGroup{Vietnam National University - Ho Chi Minh City}%
+}
+
+\iftoggle{viet}{%
+	\def\theUniversity{(*TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN*)}%
+}{%
+	\def\theUniversity{University of Science}%
+}
+
+\iftoggle{viet}{%
+	\def\theFaculty{(*KHOA VẬT LÝ - VẬT LÝ KỸ THUẬT*)}%
+}{%
+	\def\theFaculty{Faculty of Physics and Engineering Physics}%
+}
+
+\iftoggle{viet}{%
+	\def\theDepartment{(*CHUYÊN NGÀNH VẬT LÝ TIN HỌC*)}%
+}{%
+	\def\theDepartment{Department of Physics and Computer Science}%
+}
+
+\iftoggle{viet}{%
+	\def\theReport{(*KHOÁ LUẬN TỐT NGHIỆP*)}%
+}{%
+	\def\theReport{BACHELOR THESIS}%
+}
+
+\iftoggle{viet}{%
+	\def\thePlace{(*TP. HỒ CHÍ MINH*)}%
+}{%
+	\def\thePlace{HO CHI MINH CITY}%
+}
+
+\def\theDate{\the\year}
+\end{lstlisting}
+
+Các câu lệnh điều kiện \path|\iftoggle{viet}| dùng để kiểm tra tuỳ chọn \textbf{vietnamese}. Tiếp theo, là định nghĩa đầy đủ của \path|\printcoverpage|:\par~\par
+
+\begin{lstlisting}[firstnumber=223]
+\newcommand{\printcoverpage}{%
+	\thispagestyle{empty}
+	\begin{center}
+	{\bfseries\parskip=0pt
+	
+	\theGroup
+	\vspace*{0.1cm}
+	
+	\theUniversity
+	\vspace*{0.1cm}
+	
+	\theFaculty
+	\vspace*{0.1cm}
+	
+	\theDepartment\\
+	\vspace*{0.1cm}
+	------------------oOo------------------
+	}
+	\vspace*{1cm}
+	
+	{\bfseries
+	\large
+	\theReport}
+	
+	\vspace*{2cm plus 1cm minus 0.5cm}
+	
+	\iftoggle{viet}
+	{\begin{flushleft}
+		\textsl{\Large\underline{(*Đề tài*):}}
+	\end{flushleft}}
+	{~}
+	{\huge\bfseries
+		\@title\par	
+	}
+	\end{center}
+	
+	\vspace*{2cm plus 1 cm minus 0.5cm}
+	
+	\hfill
+	{\bfseries\large
+	\iftoggle{viet}{%
+	\begin{tabular}{r l}
+	\underline{SVTH}: & \@author\\
+	\underline{CBHD}: & \thesupervisorName\\
+	\end{tabular}%
+	}{%
+	\begin{tabular}{r l}
+	\underline{Student}: & \@author\\
+	\underline{Supervisor}: & \thesupervisorName\\
+	\end{tabular}%
+	}}
+	
+	\vfill
+	\begin{center}
+	-----------------------------------------\\
+	\bfseries
+	\thePlace\ - \theDate
+	\end{center}
+	\clearpage
+}
+\end{lstlisting}
+
+Kế đến là định nghĩa đầy đủ của câu lệnh \path|\printfrontmatter|:\par~\par 
+\begin{lstlisting}[firstnumber=296]
+\newcommand{\printfrontmatter}{%
+		\frontmatter
+		\fancyhead[L]{}
+		\ifdefempty{\theacknowledgements}{~}{
+		\pagenumbering{gobble}
+		\iftoggle{viet}{%
+		\chapter*{(*Lời cảm ơn*)}\markboth{}{(*Lời cảm ơn*)}%
+		}{%
+		\chapter*{Acknowledgements}\markboth{}{Acknowledgements}%
+		}
+		\label{ch:ack}
+		\theacknowledgements
+		\clearpage
+		\pagenumbering{roman}
+		}
+		
+		{
+		\tableofcontents
+		}
+		
+		\iftoggle{noacr}{~}
+		{%
+		\clearpage
+		
+		\printnoidxglossary[type=\acronymtype,title=\acrtitle, style=listdotted]
+		\addcontentsline{toc}{chapter}{\acrtitle}
+		}
+		
+		{%
+		\clearpage
+		\conditionalLoF
+		}
+		
+		{%
+		\clearpage
+		\conditionalLoT
+		}
+		
+		\mainmatter
+		\fancyhead[L]{\slshape\nouppercase{\chaptertitlename\ \thechapter}}
+}
+\end{lstlisting}
+

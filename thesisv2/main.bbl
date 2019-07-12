@@ -1,0 +1,741 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{lamport}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{isbn}{0-201-52983-1}
+      \field{pagetotal}{288}
+      \field{title}{LaTeX: A Document Preparation System}
+      \field{year}{1994}
+    \endentry
+    \entry{notoccite}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b452bc2f016ee9474a6858839272fff9}{%
+           family={Arseneau},
+           familyi={A\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{fullhash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{bibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorbibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authornamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorfullhash}{b452bc2f016ee9474a6858839272fff9}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{month}{7}
+      \field{title}{The \emph{\ttfamily notoccite} package}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/notoccite/notoccite.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/notoccite/notoccite.pdf
+      \endverb
+    \endentry
+    \entry{wrapfig}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b452bc2f016ee9474a6858839272fff9}{%
+           family={Arseneau},
+           familyi={A\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{fullhash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{bibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorbibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authornamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorfullhash}{b452bc2f016ee9474a6858839272fff9}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{31}
+      \field{edition}{v3.6}
+      \field{month}{1}
+      \field{title}{The \emph{\ttfamily wrapfig} package}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/wrapfig/wrapfig-doc.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/wrapfig/wrapfig-doc.pdf
+      \endverb
+    \endentry
+    \entry{latex-comp}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{588d1d6a8974db190596907e433f57be}
+      \strng{fullhash}{588d1d6a8974db190596907e433f57be}
+      \strng{bibnamehash}{588d1d6a8974db190596907e433f57be}
+      \strng{authorbibnamehash}{588d1d6a8974db190596907e433f57be}
+      \strng{authornamehash}{588d1d6a8974db190596907e433f57be}
+      \strng{authorfullhash}{588d1d6a8974db190596907e433f57be}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{isbn}{0-201-36299-6}
+      \field{pagetotal}{1120}
+      \field{title}{The LaTeX Companion}
+      \field{year}{2004}
+    \endentry
+    \entry{caption}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=1f7b4f8fb1312c184175d6339f35e887}{%
+           family={Sommerfeldt},
+           familyi={S\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f7b4f8fb1312c184175d6339f35e887}
+      \strng{fullhash}{1f7b4f8fb1312c184175d6339f35e887}
+      \strng{bibnamehash}{1f7b4f8fb1312c184175d6339f35e887}
+      \strng{authorbibnamehash}{1f7b4f8fb1312c184175d6339f35e887}
+      \strng{authornamehash}{1f7b4f8fb1312c184175d6339f35e887}
+      \strng{authorfullhash}{1f7b4f8fb1312c184175d6339f35e887}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{month}{11}
+      \field{title}{Customizing captions of floating environments}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/caption/caption-eng.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/caption/caption-eng.pdf
+      \endverb
+    \endentry
+    \entry{url}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=b452bc2f016ee9474a6858839272fff9}{%
+           family={Arseneau},
+           familyi={A\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{fullhash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{bibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorbibnamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authornamehash}{b452bc2f016ee9474a6858839272fff9}
+      \strng{authorfullhash}{b452bc2f016ee9474a6858839272fff9}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{16}
+      \field{month}{9}
+      \field{title}{\emph{\ttfamily url.sty} version 3.4}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/url/url.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/url/url.pdf
+      \endverb
+    \endentry
+    \entry{class}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=0683b59143200c439bf84611c893921e}{%
+           family={Braams},
+           familyi={B\bibinitperiod},
+           given={Johannes\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{94b546ba2a35b825e659951ba0f11abd}
+      \strng{fullhash}{94b546ba2a35b825e659951ba0f11abd}
+      \strng{bibnamehash}{94b546ba2a35b825e659951ba0f11abd}
+      \strng{authorbibnamehash}{94b546ba2a35b825e659951ba0f11abd}
+      \strng{authornamehash}{94b546ba2a35b825e659951ba0f11abd}
+      \strng{authorfullhash}{94b546ba2a35b825e659951ba0f11abd}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{edition}{v1.4h}
+      \field{month}{9}
+      \field{title}{Standard Document Classes for LaTeX version 2e}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/base/classes.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/base/classes.pdf
+      \endverb
+    \endentry
+    \entry{lstlisting}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=88ffc61d42e2e1f304354603e8fce13e}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={Jobst},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{88ffc61d42e2e1f304354603e8fce13e}
+      \strng{fullhash}{88ffc61d42e2e1f304354603e8fce13e}
+      \strng{bibnamehash}{88ffc61d42e2e1f304354603e8fce13e}
+      \strng{authorbibnamehash}{88ffc61d42e2e1f304354603e8fce13e}
+      \strng{authornamehash}{88ffc61d42e2e1f304354603e8fce13e}
+      \strng{authorfullhash}{88ffc61d42e2e1f304354603e8fce13e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{4}
+      \field{edition}{v1.6}
+      \field{month}{6}
+      \field{title}{The \emph{\ttfamily Listings} Package}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
+      \endverb
+      \verb{url}
+      \verb http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
+      \endverb
+    \endentry
+    \entry{inputenc}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=379daa727a5d7fd1d15bca2e505c3b9f}{%
+           family={Jeffrey},
+           familyi={J\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \strng{fullhash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \strng{bibnamehash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \strng{authorbibnamehash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \strng{authornamehash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \strng{authorfullhash}{b60886bacb02f3700e1bdeb8a3d94e8a}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{edition}{v1.2c}
+      \field{month}{3}
+      \field{title}{\emph{\ttfamily inputenc.sty}}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/base/inputenc.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/base/inputenc.pdf
+      \endverb
+    \endentry
+    \entry{gsem}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=e4fbc9f5c00e4f99ac7bd613d0751721}{%
+           family={Rousseaux},
+           familyi={R\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{2}{%
+        {Geneva School of Economics}%
+        {Management}%
+      }
+      \list{location}{1}{%
+        {Uni Mail, Boulevard du Pont-d'Arve 40, 1205 Genève, Switzerland}%
+      }
+      \strng{namehash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \strng{fullhash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \strng{bibnamehash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \strng{authorbibnamehash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \strng{authornamehash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \strng{authorfullhash}{e4fbc9f5c00e4f99ac7bd613d0751721}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{edition}{v0.9.4}
+      \field{month}{2}
+      \field{title}{The \emph{\ttfamily gsemthesis} class}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/gsemthesis/gsemthesis.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/gsemthesis/gsemthesis.pdf
+      \endverb
+    \endentry
+    \entry{titlesec}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a09bd44790d5e829e246beb8a2350305}{%
+           family={Bezos},
+           familyi={B\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{fullhash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{bibnamehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{authorbibnamehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{authornamehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{authorfullhash}{a09bd44790d5e829e246beb8a2350305}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{edition}{v2.10.2}
+      \field{month}{3}
+      \field{title}{The \emph{\ttfamily titlesec}, \emph{\ttfamily titleps} and \emph{\ttfamily titletoc} Packages}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+      \endverb
+    \endentry
+    \entry{xcolor}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=357000208380ad2a0fb16d7f8709e8ac}{%
+           family={Kern},
+           familyi={K\bibinitperiod},
+           given={Dr.\bibnamedelimi Uwe},
+           giveni={D\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+      }
+      \strng{namehash}{357000208380ad2a0fb16d7f8709e8ac}
+      \strng{fullhash}{357000208380ad2a0fb16d7f8709e8ac}
+      \strng{bibnamehash}{357000208380ad2a0fb16d7f8709e8ac}
+      \strng{authorbibnamehash}{357000208380ad2a0fb16d7f8709e8ac}
+      \strng{authornamehash}{357000208380ad2a0fb16d7f8709e8ac}
+      \strng{authorfullhash}{357000208380ad2a0fb16d7f8709e8ac}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{edition}{v2.12}
+      \field{month}{5}
+      \field{title}{Extending LaTeX's color facilities: the \emph{\ttfamily xcolor}}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/caption/subcaption.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/caption/subcaption.pdf
+      \endverb
+    \endentry
+    \entry{multirow}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=18e7fa6427fb3f7ad9ba503c90b53bdf}{%
+           family={Oostrum\bibnamedelimb et\bibnamedelima al},
+           familyi={O\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod},
+           given={Piet},
+           giveni={P\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \strng{fullhash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \strng{bibnamehash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \strng{authorbibnamehash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \strng{authornamehash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \strng{authorfullhash}{18e7fa6427fb3f7ad9ba503c90b53bdf}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{edition}{v2.2}
+      \field{month}{11}
+      \field{title}{The \emph{\ttfamily multirow}, \emph{\ttfamily bigstrut}, \emph{\ttfamily bigdelim} packages}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/multirow/multirow.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/multirow/multirow.pdf
+      \endverb
+    \endentry
+    \entry{biblatex}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=ccc361b8a52e9c8576cb2f1e4cd80193}{%
+           family={al},
+           familyi={a\bibinitperiod},
+           given={Philipp\bibnamedelima Lehman},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \strng{fullhash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \strng{bibnamehash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \strng{authorbibnamehash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \strng{authornamehash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \strng{authorfullhash}{ccc361b8a52e9c8576cb2f1e4cd80193}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{edition}{v3.9}
+      \field{month}{12}
+      \field{title}{The \emph{\ttfamily biblatex} package}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
+      \endverb
+    \endentry
+    \entry{babel}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=0683b59143200c439bf84611c893921e}{%
+           family={Braams},
+           familyi={B\bibinitperiod},
+           given={Johannes\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=a09bd44790d5e829e246beb8a2350305}{%
+           family={Bezos},
+           familyi={B\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \strng{fullhash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \strng{bibnamehash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \strng{authorbibnamehash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \strng{authornamehash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \strng{authorfullhash}{673de0a61d7b3c2b5077f2bcb918466e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{edition}{v3.15}
+      \field{month}{11}
+      \field{title}{Babel}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/required/babel/base/babel.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/required/babel/base/babel.pdf
+      \endverb
+    \endentry
+    \entry{etoolbox}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=97afecc8539f253db93a1c737d62212c}{%
+           family={Lehman},
+           familyi={L\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=93c71fed62527d4c8c6ae13ee771fcdd}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b15c256849ba7274108f38b6f304e840}
+      \strng{fullhash}{b15c256849ba7274108f38b6f304e840}
+      \strng{bibnamehash}{b15c256849ba7274108f38b6f304e840}
+      \strng{authorbibnamehash}{b15c256849ba7274108f38b6f304e840}
+      \strng{authornamehash}{b15c256849ba7274108f38b6f304e840}
+      \strng{authorfullhash}{b15c256849ba7274108f38b6f304e840}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{edition}{v2.5}
+      \field{month}{11}
+      \field{title}{The \emph{\ttfamily etoolbox} package}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/etoolbox/etoolbox.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/etoolbox/etoolbox.pdf
+      \endverb
+    \endentry
+    \entry{array}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3094f4812cc660f7320fd1ab3d3da906}{%
+           family={Carlisle},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \strng{fullhash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \strng{bibnamehash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \strng{authorbibnamehash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \strng{authornamehash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \strng{authorfullhash}{39942886e949a20ebdbcdbf6bf73cbdf}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{edition}{v2.4d}
+      \field{month}{4}
+      \field{title}{A new implementation of LaTeX’s \emph{\ttfamily tabular} and \emph{\ttfamily array} environment}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/required/tools/array.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/required/tools/array.pdf
+      \endverb
+    \endentry
+    \entry{fancyhdr}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=9869d88ab60333db37f5aa4d2644b76a}{%
+           family={Oostrum},
+           familyi={O\bibinitperiod},
+           given={Piet},
+           giveni={P\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{9869d88ab60333db37f5aa4d2644b76a}
+      \strng{fullhash}{9869d88ab60333db37f5aa4d2644b76a}
+      \strng{bibnamehash}{9869d88ab60333db37f5aa4d2644b76a}
+      \strng{authorbibnamehash}{9869d88ab60333db37f5aa4d2644b76a}
+      \strng{authornamehash}{9869d88ab60333db37f5aa4d2644b76a}
+      \strng{authorfullhash}{9869d88ab60333db37f5aa4d2644b76a}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{30}
+      \field{edition}{v3.6}
+      \field{month}{6}
+      \field{title}{Page layout in LaTeX}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+      \endverb
+    \endentry
+    \entry{glossaries}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=07902fcf643e8d790974b6b78aee25bb}{%
+           family={Talbot},
+           familyi={T\bibinitperiod},
+           given={Nicola\bibnamedelima L.C.},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{07902fcf643e8d790974b6b78aee25bb}
+      \strng{fullhash}{07902fcf643e8d790974b6b78aee25bb}
+      \strng{bibnamehash}{07902fcf643e8d790974b6b78aee25bb}
+      \strng{authorbibnamehash}{07902fcf643e8d790974b6b78aee25bb}
+      \strng{authornamehash}{07902fcf643e8d790974b6b78aee25bb}
+      \strng{authorfullhash}{07902fcf643e8d790974b6b78aee25bb}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{month}{11}
+      \field{title}{The glossaries package v4.35: a guide for beginners}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/glossaries/glossariesbegin.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/glossaries/glossariesbegin.pdf
+      \endverb
+    \endentry
+    \entry{tocloft}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=939ad18f84ff6e59c3d1a6435b8ebd88}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ec6b3eea5104dd27b466800c8536b63c}{%
+           family={Press},
+           familyi={P\bibinitperiod},
+           given={Herries},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{75711c9f976d13836988c506c8d4a73c}
+      \strng{fullhash}{75711c9f976d13836988c506c8d4a73c}
+      \strng{bibnamehash}{75711c9f976d13836988c506c8d4a73c}
+      \strng{authorbibnamehash}{75711c9f976d13836988c506c8d4a73c}
+      \strng{authornamehash}{75711c9f976d13836988c506c8d4a73c}
+      \strng{authorfullhash}{75711c9f976d13836988c506c8d4a73c}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{31}
+      \field{edition}{v2.3i}
+      \field{month}{8}
+      \field{title}{The \emph{\ttfamily tocloft} package}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/tocloft/tocloft.pdf
+      \endverb
+      \verb{url}
+      \verb http://mirror.kku.ac.th/CTAN/macros/latex/contrib/tocloft/tocloft.pdf
+      \endverb
+    \endentry
+    \entry{latex-pro}{online}{}
+      \list{organization}{1}{%
+        {LaTeX3 Project Team}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to LaTeX}
+      \verb{urlraw}
+      \verb https://www.latex-project.org/about/
+      \endverb
+      \verb{url}
+      \verb https://www.latex-project.org/about/
+      \endverb
+    \endentry
+    \entry{sharelatex}{online}{}
+      \list{organization}{1}{%
+        {ShareLaTeX team}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labeltitlesource}{title}
+      \field{title}{Learn LaTeX in 30 minutes}
+      \verb{urlraw}
+      \verb https://www.sharelatex.com/learn/Learn_LaTeX_in_30_minutes
+      \endverb
+      \verb{url}
+      \verb https://www.sharelatex.com/learn/Learn_LaTeX_in_30_minutes
+      \endverb
+    \endentry
+    \entry{kile}{online}{}
+      \list{organization}{1}{%
+        {Jonathan Pechta et al}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labeltitlesource}{title}
+      \field{title}{The Kile Handbook}
+      \verb{urlraw}
+      \verb https://docs.kde.org/stable4/en/extragear-office/kile/index.html
+      \endverb
+      \verb{url}
+      \verb https://docs.kde.org/stable4/en/extragear-office/kile/index.html
+      \endverb
+    \endentry
+    \entry{ctan}{online}{}
+      \list{organization}{1}{%
+        {CTAN team}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labeltitlesource}{title}
+      \field{title}{What are TeX and its friends?}
+      \verb{urlraw}
+      \verb https://www.ctan.org/tex/
+      \endverb
+      \verb{url}
+      \verb https://www.ctan.org/tex/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

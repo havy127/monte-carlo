@@ -1,0 +1,45 @@
+\chapter{Trích đoạn file input \LaTeX\ của đề tài}\label{append:B}
+Mục này bao gồmm các trích đoạn của file input LaTeX của báo cáo này, đóng vai trò như ví dụ sử dụng cho file class sản phẩm.
+Dưới đây là file \path|main.tex|.\par~\par
+\begin{lstlisting}
+\documentclass[vietnamese]{myclass}
+
+\graphicspath{ {image/} }
+\addbibresource{bibbi.bib}
+\makenoidxglossaries
+
+\newacronym{lppl}{LPPL}{LaTeX Project Public License}
+\newacronym{tex}{\TeX}{Tau Epsilon Chi}
+\newacronym{wysiwyg}{WYSIWYG}{What you see is what you get}
+\newacronym{ctan}{CTAN}{Comprehensive \TeX\ Archive Network}
+\newacronym{ams}{AMS}{American Mathematical Society}
+\newacronym{isbn}{ISBN}{International Standard Book Number}
+\newacronym{lof}{LoF}{List of Figures}
+\newacronym{lot}{LoT}{List of Tables}
+\newacronym{toc}{ToC}{Table of Contents}
+
+\title{(*THIẾT KẾ LUẬN VĂN, BÀI BÁO CÁO SỬ DỤNG HỆ THỐNG \LaTeX*)}
+\author{(*Trịnh Tích Thiện*)}
+\supervisorName{TS. Nguyễn Chí Linh}
+
+\begin{document}
+\printcoverpage
+\acknowledgements{\input{chapter/acknowledgements}}
+\printfrontmatter
+
+\include{chapter/introduction}
+\fancyhead[L]{\slshape\nouppercase{\chaptertitlename\ \thechapter}}
+\include{chapter/chapter1}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+\include{chapter/chapter4}
+\thebackmatter
+\include{chapter/appendixA}
+\include{chapter/appendixB}
+
+\reference
+\end{document}
+\end{lstlisting}
+
+Đối với các văn bản phức tạp, ta nên phân các chương hồi ra nhiều file \verb|.tex| khác nhau, sau đó sử dụng câu lệnh \path|\include|
+hoặc \path|\input|

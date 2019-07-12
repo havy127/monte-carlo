@@ -1,0 +1,59 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {vietnamese}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{C\IeC {\'a}c k\IeC {\'\i } hi\IeC {\d \ecircumflex }u vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{iii}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{iv}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Danh s\'ach b\h {a}ng}{vi}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{L\IeC {\`\ohorn }i gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{1}{chapter*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}T\IeC {\h \ocircumflex }ng quan v\IeC {\`\ecircumflex } \LaTeX }{3}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}\LaTeX \ l\IeC {\`a} g\IeC {\`\i }?}{3}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u v\IeC {\`\ecircumflex } tr\IeC {\`\i }nh so\IeC {\d a}n th\IeC {\h a}o Kile}{4}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}L\IeC {\d i}ch s\IeC {\h \uhorn } ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n c\IeC {\h u}a \LaTeX }{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}So\IeC {\d a}n th\IeC {\h a}o v\IeC {\u a}n b\IeC {\h a}n trong \LaTeX }{7}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t \LaTeX }{7}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t \LaTeX \ tr\IeC {\^e}n Linux}{7}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t \LaTeX \ tr\IeC {\^e}n Windows}{9}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng d\IeC {\~\acircumflex }n s\IeC {\ohorn } l\IeC {\uhorn }\IeC {\d \ohorn }c}{16}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}\IeC {\DJ }\IeC {\d \abreve }c \IeC {\dj }i\IeC {\h \ecircumflex }m c\IeC {\h u}a \LaTeX }{16}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}So\IeC {\d a}n th\IeC {\h a}o v\IeC {\u a}n b\IeC {\h a}n}{19}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } \IeC {\dj }\IeC {\d i}nh d\IeC {\d a}ng v\IeC {\u a}n b\IeC {\h a}n ri\IeC {\^e}ng trong \LaTeX }{31}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}T\IeC {\h \ocircumflex }ng quan v\IeC {\`\ecircumflex } g\IeC {\'o}i v\IeC {\`a} l\IeC {\'\ohorn }p}{31}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u l\IeC {\'\ohorn }p \texttt {vlththesis}}{32}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}C\IeC {\'\acircumflex }u tr\IeC {\'u}c c\IeC {\h u}a \texttt {vlththesis}}{32}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}C\IeC {\'a}c khai b\IeC {\'a}o ban \IeC {\dj }\IeC {\`\acircumflex }u}{32}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Khai b\IeC {\'a}o g\IeC {\'o}i v\IeC {\`a} thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p}{35}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.3}C\IeC {\'a}c c\IeC {\^a}u l\IeC {\d \ecircumflex }nh c\IeC {\h u}a \texttt {vlththesis}}{54}{subsection.3.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{58}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{58}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n c\IeC {\h u}a \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{58}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\IeC {\DJ }\IeC {\d i}nh ngh\IeC {\~\i }a \IeC {\dj }\IeC {\`\acircumflex }y \IeC {\dj }\IeC {\h u} c\IeC {\h u}a c\IeC {\^a}u l\IeC {\d \ecircumflex }nh}{61}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Tr\IeC {\'\i }ch \IeC {\dj }o\IeC {\d a}n t\IeC {\d \acircumflex }p tin \IeC {\dj }\IeC {\`\acircumflex }u v\IeC {\`a}o \LaTeX \ c\IeC {\h u}a \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{66}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{69}{appendix*.42}

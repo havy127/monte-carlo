@@ -1,0 +1,54 @@
+\chapter{Kết luận và hướng phát triển}\label{ch:4}
+\section{Kết luận}\label{sec:4.1}
+Đề tài tập trung tổng hợp các package, khai báo và xây dựng các câu lệnh để tạo thành một file class
+hỗ trợ định dạng bố cục cho các khoá luận tốt nghiệp và báo cáo, đề tài cũng đồng thời đưa ra những
+hướng dẫn cơ bản để người dùng có thể cài đặt và nắm bắt được cách tạo một file LaTeX input đơn giản,
+giúp người dùng làm quen với việc chuyển hoá ý tưởng thiết kế thành cấu trúc logic, để tập trung hơn
+vào nội dung và trình tự sắp xếp các nội dung của văn bản hơn là tốn quá nhiều thời gian cho định
+dạng bên ngoài, kế thừa đúng với mục đích của những người sáng tạo ra LaTeX.\par
+Tuy chỉ mới thành công trong việc định dạng cơ bản các thành phần của một báo cáo khoá luận, cũng như
+chưa có những câu lệnh chặt chẽ và môi trường mới để giúp người dùng thuận tiện trong việc
+thiết kế các bố cục khác nhau, do thời gian tìm hiểu có giới hạn, nhưng class sản phẩm cũng đủ để trở thành nền tảng cho nhiều hướng
+phát triển sau này.\par
+Ngoài file class, bản thân báo cáo này cũng được xem là một thành phẩm của đề tài, do được build ra hoàn toàn
+nhờ sử dụng file class sản phẩm. Đồng thời, báo cáo cũng đã tổng hợp các tài liệu, nguồn thông tin
+cần thiết, phân tích đầy đủ cấu trúc của file class, nhằm giúp những ai quan tâm có thể dễ dàng nắm bắt,
+chỉnh sửa, bổ sung, phát triển thêm cho class và sử dụng được thêm đầy đủ tính năng của các
+package tích hợp.\par
+\section{Hướng phát triển của đề tài}\label{sec:4.2}
+Do tính chất mã nguồn mở của LaTeX và các package, số lượng gói và class hỗ trợ LaTeX ngày càng được phát triển thêm 
+nhiều tính năng, bố cục, môi trường mới tối ưu hơn những gói cũ, việc tìm hiểu, cập nhật các package mới và tối ưu hơn để tích
+hợp vào file class cũng là điều cần thiết. Hơn nữa, do chỉ mới được xây dựng, class cần phải trải qua một thời gian dài sử dụng
+mới có thể biết được những thiếu xót cần bổ sung, vì vậy việc tham khảo thêm các class mới, tìm kiếm package phù hợp
+bù đắp thiếu xót cũng là một hướng phát triển \footnote{Tuy nhiên vẫn cần phải chú ý tới độ tương thích của chúng để tránh
+xung đột khi tích hợp quá nhiều}.\par
+Như đã nói ở trên, class vẫn còn thiếu những câu lệnh giúp người dùng linh hoạt hơn trong việc thiết kế bố cục, hiện nay,
+class chỉ dừng ở mức cho ra văn bản theo đúng khuôn khổ định trược mà chưa thực sự cho phép người soạn thảo tham gia
+vào quá trình thiết kế, tuy có thể thay đổi những thiết lập package mặc định của class,nhưng nếu muốn thay đổi thứ tự 
+các thành phần, người dùng cần phải thay đổi trong file class, hoặc định nghĩa lại hoàn toàn câu lệnh, do đó cần phải
+tìm hiểu thêm nhiều thủ thuật lập trình LaTeX, để phát triển thêm các câu lệnh linh hoạt hơn và các môi trường trình bày
+thông tin mới. Trước mắt có thể phát triển cho class hỗ trợ tốt hơn cho việc tạo các văn bản in hai mặt giấy.\par
+Đề tài còn có thể phát triển thêm để tìm hiểu sâu hơn về TeX, các macro và câu lệnh của nó. Thao tác với các câu lệnh và macro
+ở mức TeX, sẽ giúp cho câu lệnh chặt chẽ và hạn chế lỗi nhiều hơn, tuy nhiên, do đây là nền tảng cấp thấp hơn LaTeX, nên các
+cú pháp của câu lệnh khá khó đọc và chuyên sâu, đòi hỏi nhiều thời gian tìm hiểu, nghiên cứu.\par
+Trong số các package cần tìm hiểu trên, đáng chú ý nhất là package \texttt{Tikz}, cho phép người dùng tạo (vẽ) các đối
+tượng hình thể trong LaTeX (graphic element) như: đường thẳng, hình tròn, hình chữ nhật, đường cong,\dots Đây là một
+package mạnh mẽ và phức tạp hỗ trợ đắc lực cho các công việc thiết kế, lập đồ thị và nhiều ứng dụng khác, việc tìm
+hiểu câu lệnh của gói này và tích hợp vào class sẽ mở ra các khả năng cho phép người dùng có thêm nhiều lựa chọn trang
+trí, thiết kế khung viền, hay lập đồ thị, sơ đồ khối,\dots \par
+Vấn đề font chữ vẫn chưa được đề cập trong đề tài này, hướng phát triển tiếp theo có thể tập trung vào tìm hiểu thêm
+về các khái niệm bộ mã kí tự và các package về font chữ để hạn chế những cảnh báo giải mã tiếng Việt còn tồn động trong
+class. Các khái niệm trong LaTeX, như hộp (box) và khoảng cách (length) cũng nên được tìm hiểu nhằm phát triển nhiều hiệu
+ứng cho các kí tự, hiện nay có nền tảng biến thể XeLaTeX và XeTeX tập trung về vấn đề font chữ này.\par
+Các package và class hiện nay được phát triển sử dụng ba công cụ được tích hợp trong các distribution đó là class \texttt{ltxdoc},
+package \texttt{doc} và công cụ \texttt{docstrip}, các công cụ này giúp người viết có thể xây dựng class, package và tạo văn bản
+hướng dẫn, thông tin trong cùng một file duy nhất, phần văn bản vừa đóng vai trò chú thích cho code, vừa trở thành câu chữ trong văn
+bản hướng dẫn khi được buid trực tiếp bằng trình soạn thảo hỗ trợ LaTeX, khi được xử lý qua công cụ \texttt{docstrip}, file tích hợp
+đó sẽ trở thành một file \texttt{.sty} hay \texttt{.cls} thông thường. Các công cụ trên cung cấp người viết phương tiện để xây dựng
+các file package lớn, giúp cho họ dễ bảo trì, phát triển, soạn thảo văn bản hướng dẫn trong cùng một file mà không cần tạo nhiều
+file input riêng cho các mục đích trên. Do quy mô của class sản phẩm này và thời gian cho phép có hạn, nên đề tài chưa có cơ hội tìm
+hiểu thêm và ứng dụng các công cụ đó để xây dựng file class này, việc tìm hiểu về \texttt{doc} và \texttt{docstrip} là hướng phát
+triển cần thiết cho những ai muốn xây dựng các package và class quy mô, có thể phân phối được trên \acrshort{ctan}.\par
+Và cuối cùng là việc tìm hiểu thêm về cách kết nối với cộng đồng người dùng LaTeX, ứng dụng GitHub và \acrshort{CTAN} để phân phối
+sản phẩm, nhận đánh giá và đóng góp từ người dùng, hướng đến việc xây dựng, bảo trì sản phẩm class và package theo đúng tinh thần của cộng đồng mã nguồn mở, tìm hiểu kĩ
+càng về giấy phép \acrshort{lppl} để có hướng phát triển đúng đắn cho thành phẩm.\par 

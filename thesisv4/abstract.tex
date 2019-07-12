@@ -1,0 +1,70 @@
+\documentclass{vlththesis}
+\geometry{
+left=0.79in, right=0.7in, top=0.8in, bottom=1in,
+}
+\newlength{\mylengthnew}
+\settowidth{\mylengthnew}{Thesis Name:\ }
+
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\large
+\theUniversity\\
+\theFaculty\\
+\bfseries
+\theDepartment
+\end{center}
+\begin{center}
+\Large
+Thesis Synopsis
+\end{center}
+\begin{flushleft}
+Student Name: Trinh Tich Thien \hspace{2in} Student ID: 1313172\\
+Thesis Name: \textbf{DESIGN BACHELOR THESIS AND REPORT TEMPLATE IN\\ \hspace{\mylengthnew}LaTeX}\\
+Student Department: \theDepartment\\
+Supervisor: Dr. Nguyen Chi Linh\\
+Workplace: \theUniversity
+\end{flushleft}
+\begin{center}
+\textbf{\large Abstract}
+\end{center}
+
+Nowadays, aside from conventional text processors or editors, LaTeX is an alternative choice for
+authors with different fields of expertise. It also introduces a completely new philosophy, which differs
+from many popular text editors, to its user and easily becomes the most used typesetting system among
+academic environment. In 1977, Donald E.Knuth first developed the TeX system, which later received
+further development to become what is known today as LaTeX, from Leslie Lamport. Its raison d'être was
+(is and will always be) providing utilities for authors to leave the visual design to the typesetting
+system, and instead, focus on the contents of their works.\par
+Realizing that LaTeX is appropriate for composing text with clear and unified standards, and the system
+itself allows users to design layouts and styles for custom types of documents, this thesis was conceived
+with the purpose is to design, build a template for bachelor theses. This template will help students spend
+less time in designing and formating the visual aspect of their theses, reports and concentrate more on
+the contents and logical structure of components of their works, staying true to the ideal of LaTeX's creators.\par
+This thesis incorporated necessary packages, configurations and definitions for new commands (or control sequences as Knuth calls them)
+into a single class file, which will form a standard layout for bachelor theses and reports, the thesis's report also
+includes introductory manual to guide users in creating LaTeX environment as well as composing a simple LaTeX input file, which
+is then built into a human-readable document.\par
+Due to time constraints, the produced class file still haves undesired flaws, and in need of
+test-run to evaluate performance and any necessary adjustments. However, the product is enough
+to become a foundation for future development; moreover, the thesis's report has detailed analysis
+on the structure of this class file and includes essential documentation, which, combining with
+the class file, will serve as a guideline and reference for anyone who wants to build their own class or
+package for LaTeX.\par
+This thesis's directions for future development include (for more directions, please refer to chapter 4 of the report):\par
+\begin{itemize}
+ \item Refer to other class files for new ideas, search for new packages to offset the shortcomings of
+ this class.
+ \item Define more flexible commands and new formatting environment, modify the produced class to better support
+ documents that require double-sided printing.
+ \item Study the concept of text encoding and font packages to suppress Vietnamese characters encoding warnings, that
+ are still present when building LaTeX input file on this class.
+ \item Study about tools and utilities that support writing large and complex classes or packages.
+\end{itemize}
+
+
+
+
+
+
+\end{document}

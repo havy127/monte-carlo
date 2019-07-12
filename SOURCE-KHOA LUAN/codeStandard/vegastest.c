@@ -29,8 +29,8 @@
 #include <math.h>
 #include <stdio.h>
 #include "vegas.h"
-#define DIMENSION 5
-#define FUNCTIONS 4
+#define DIMENSION 1
+#define FUNCTIONS 1
 #define RANDTEST 314159
 #ifndef PI
 #define PI     3.14159265358979323846
@@ -148,7 +148,7 @@ int main(int argc, char **argv)
 
   for (i=0; i<DIMENSION; i++) {
     reg[i] = 0.0;
-    reg[i+DIMENSION] = 1.0;
+    reg[i+DIMENSION] = 2.0;
   }
 
   /* set up the grid (init = 0) with 5 iterations of 1000 samples,

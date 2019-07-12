@@ -1,0 +1,95 @@
+\chapter{Tổng quan về \LaTeX}\label{ch:1}
+Khác với quan niệm của nhiều người, LaTeX \emph{không phải} là chương trình hay hệ thống xử lý 
+văn bản (document processor). Trong chương này, ta sẽ nói về định nghĩa, lịch sử của LaTeX và 
+cả TeX, nền tảng mà LaTeX dựa trên.\par
+\section{\LaTeX\ là gì?}\label{sec:1.1}
+LaTeX (phiên âm La-téch hoặc Lây-téch) là hệ thống trình bày văn bản (document preparation 
+system)\cite{latex-pro}, được sử dụng phổ biến trong cộng đồng khoa học và học thuật để soạn thảo,
+trình bày các văn bản khoa học, kĩ thuật. Hiện nay, các nhà khoa học trao đổi tài liệu của họ dưới
+dạng mã LaTeX \cite{lamport}. Ngoài lĩnh vực học thuật, LaTeX còn được sử dụng để viết các thư 
+từ doanh nghiệp hoặc cá nhân, tin tức, các bài báo, sách và nhiều lĩnh vực khác.\par
+Tính đến nay, LaTeX đã có mặt trên phần lớn các hệ điều hành phổ biến như Windows, Linux, 
+Mac OS,\dots thông qua các gói phân phối (distribution). Gói phân phối là tập hợp các gói 
+(package) và các chương trình (như trình biên dịch, font chữ, các macro) hỗ trợ người dùng thiết 
+lập môi trường sử dụng LaTeX, mỗi hệ điều hành sẽ có các gói phân phối riêng như TeX Live 
+(Linux), MiKTeX (Windows) hay MacTeX (Mac OS). Bên cạnh hệ điều hành, LaTeX cũng hỗ trợ hoàn 
+toàn hoặc một phần khoảng 200 ngôn ngữ khác nhau, thông qua gói đa ngôn ngữ \texttt{babel} 
+\cite{babel}.\par 
+LaTeX có nhiều trình soạn thảo (editor) hỗ trợ, từ miễn phí (Kile, TeXmaker, TeXstudio,\dots), 
+bản quyền (Inlage, Scientific WorkPlace, WinEdt,\dots) và cả trên nền web (\href{https://www.sharelatex.com/}{ShareLaTeX}, \href{https://latexbase.com/}{LaTeX Base},
+\href{https://www.overleaf.com/}{Overleaf},\dots). Ở đề tài này, tôi sử dụng trình soạn th Kile trên hệ điều hành Fedora 26, do hệ điều hành và
+trình soạn thảo này đều là mã nguồn mở.\par
+\section{Giới thiệu về trình soạn thảo Kile}\label{sec:1.2}
+Trình soạn thảo Kile là môi trường LaTeX tích hợp (integrated) dành cho môi trường desktop của KDE, nó có thể chạy
+được trên các hệ điều hành UNIX, Linux và cả Windows. Kile cung cấp giao diện đồ hoạ giúp người dùng có thể
+sử dụng được hết các chức năng của LaTeX một cách trực quan với các công cụ biên dịch, chuyển đổi, sửa lỗi,
+xem văn bản sau khi biên dịch, tự động hoàn thành mã nguồn, thuật sĩ hỗ trợ tạo tập tin LaTeX, tài liệu tham khảo LaTeX
+và công cụ quản lý dự án (project management) \cite{kile}.\par
+Kile được phát triển dựa trên thành phần soạn thảo Kate,\dots phần lớn các chức năng soạn thảo của Kile
+là từ Kate. Tuy nhiên, Kile được bổ sung thêm khả năng chỉnh sửa và xử lý văn bản LaTeX.\par
+\section{Lịch sử phát triển của \LaTeX}\label{sec:1.3}
+\renewcommand{\labelitemi}{\textendash}
+Dưới đây là lịch sử phát triển của LaTeX và TeX, nền tảng mà LaTeX dựa trên:\par
+
+\begin{itemize}
+ \item Tháng 5, năm 1977, Donald E.Knuth bắt đầu phát triển một nền tảng xử lý văn bản mới, được
+ gọi là “\TeX\ và \texttt{METAFONT}”, mục đích ban đầu của ông khi phát triển TeX là
+ dùng nó để biên soạn sách \emph{The Art of Computer Progrmming} của mình, sau khi không đồng tình với chất
+ luợng bản in của nhà xuất bản. Dự án \acrfull{tex} được ông chính thức
+ công bố và khởi động một năm sau đó \cite{latex-comp}\cite{ctan}.
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.25\linewidth]{image/Knuth.jpg}\label{fig:knuth}
+ \caption{Donald E.Knuth, tác giả của TeX}
+\end{figure}
+ \item Sau muời năm phát triển, vào thập niên 1990, Donald E.Knuth chính thức tuyên bố TeX đã hoàn thành 
+ phát triển và sẽ không được xây dựng thêm nữa để đảm bảo tính ổn định. Sau đó, nhi dự án với mục
+ đích phát triển thêm TeX nở rộ, với một số dự án thành công mở ra thời kì phát triển của sắp xếp chữ tự
+ động (automated typography) \cite{latex-comp}.
+ \item Từ một dự án phục vụ mục đích cá nhân, Tex còn tạo ảnh hưởng đến Cộng đồng Toán học Mỹ 
+ (\acrlong{ams}), được các nhà toán học sử dụng và phát triển thêm, cho ra đời các gói \texttt{ams}
+ hỗ trợ nhập liệu công thức, kí hiệu toán học \cite{latex-comp}.
+ \item Sử dụng cơ chế sắp chữ (typesetting engine) của TeX và các macro, Leslie Lamport bắt đầu xây dựng một ngôn ngữ 
+ mô tả văn bản (document description language) dựa trên hệ thống Scribe của Brian Reid, từ đó cho ra đời
+ LaTeX \cite{latex-comp}, nền tảng này nhanh chóng chiếm được cảm tình của người dùng do sử dụng các câu
+ lệnh, khai báo cấp cao để “đánh dấu” (markup) văn bản, gần tương tự như các ngôn ngữ đánh dấu khác 
+ như HTML. LaTeX cho phép người dùng soạn thảo mà không cần tốn quá nhiều thời gian vào việc định dạng 
+ (format) và trang trí, sắp xếp văn bản.
+ \item Trong cuốn \emph{\LaTeX : A Document Preparation System} có đoạn như sau: “LaTeX là hệ thống sắp
+ xếp văn bản. Phiên bản LaTeX phổ biến đầu tiên, có số hiệu 2.09 một cách bí hiểm\footnote{Trái với quan
+ niệm ``1.0'' của nhiều người}, xuất hiện vào 1985” \cite{lamport}. Bản LaTeX này đã góp phần phổ biến
+ các văn bản TeX ra khỏi cộng đồng toán học Mỹ, nhờ sự ổn định cũng như có đầu tư tốt về tư liệu hướng dẫn.
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.5\linewidth]{image/lamport.jpg}\label{fig:lamport}
+ \caption{Leslie Lamport, cha đẻ của LaTeX, qua đó giúp phổ biến TeX đến cộng đồng người dùng phổ thông}
+\end{figure}
+
+ \item LaTeX là ngôn ngữ phổ biến đầu tiên dùng để miêu tả \hypertarget{logic}{cấu trúc logic} của văn bản, giới thiệu triết
+ lý “thiết kế logic” (logical design) đến cộng đồng. Ý nghĩa của “thiết kế logic” là người soạn thảo chỉ
+ nên quan tâm tới thứ tự logic, cấu trúc của văn bản thay vì bận tâm đến hình thức bề ngoài của nó.
+ Tới năm 1994, Lamport đã có thể tự hào viết trong \cite{lamport} rằng: “LaTeX đã trở nên cực kì phổ biến
+ trong cộng đồng khoa học và học thuật, và được sử dụng rộng khắp trong công nghiệp”, nhưng nếu so với lúc
+ đó, độ phổ biến của LaTeX bây giờ còn lớn hớn rất nhiều đến mức trở nên quen thuộc \cite{latex-comp}.
+ \item Qua hai hội nghị quan trọng (Exeter UK, 1988 và Karlsruhe Đức, 1989), LaTeX được chấp nhận và
+ sử dụng rộng rãi ở châu Âu, dẫn đến nhu cầu về 1 bản LaTeX quốc tế (International LaTeX) và các dự án
+ hỗ trợ, chuyển đổi đa ngôn ngữ cho LaTeX của Johannes Braams \cite{latex-comp}\cite{babel}.
+ \item Sự thành công của LaTeX kéo theo hàng loạt dự án phát triển cá nhân, làm xuất hiện nhiều biến thể khiến
+ các văn bản TeX gặp vấn đề về tương thích, do được viết trên các biến thể khác nhau. Để giải quyết vấn đề
+ này, LaTeX 2$\varepsilon$ (Epsilon) ra đời, tích hợp các tính năng cần thiết vào trong lõi (kernel), xây dựng các
+ lớp (class) văn bản tiêu chuẩn, các hỗ trợ thêm về màu, hình ảnh, căn chỉnh vị trí cũng được bổ sung.
+ Bên cạnh đó là cơ chế cho phép người dùng tự xây dựng các \hypertarget{package}{tiện ích mở rộng thêm} cho LaTeX (thông qua gói và lớp)
+ và đội ngũ hỗ trợ kĩ thuật chuyên nghiệp, liên tục bảo trì kernel LaTeX, các gói quan trọng và nhận
+ các báo cáo lỗi từ người dùng.
+ \item Cũng từ đó giấy phép \acrfull{lppl} được thành lập để đề ra chuẩn mực và hướng dẫn cho việc 
+ phát triển lớp và gói mới, cho phép LaTeX hỗ trợ các mở rộng nhưng vẫn đảm bảo tính ổn định.
+ Hiện nay, các công việc duy trì và phát triển LaTeX được đảm nhiệm bởi \href{https://www.latex-project.org/about/team/}{\LaTeX 3 Project Team}. 
+ Mục tiêu trước mắt (và lâu dài) của đội ngũ phát triển chính là: tăng cường hỗ trợ đa ngôn ngữ, xây dựng một 
+ giao diện thiết kế cho LaTeX, cải thiện quy trình xuất văn bản, cải tiến 
+ xử lý định dạng trong đoạn văn, các yêu cầu về font chữ của giới báo chí, và tất nhiên, đúng với tên
+ gọi của nhóm, phát triển phiên bản thứ ba cho LaTeX. 
+\end{itemize}
+
+
+
+

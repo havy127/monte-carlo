@@ -1,0 +1,28 @@
+\chapter{Thuật toán Vegas}\label{ch:3}
+\section{Giới thiệu}\label{sec:3.1}
+Phương pháp Monte Carlo sử dụng các thuật toán để giải quyết các bài toán trên máy tính bằng cách lấy mẫu ngẫu nhiên. 
+Kết quả của phương pháp Monte Carlo này càng chính xác khi số lượng mẫu càng tăng. 
+Theo quy luật số lớn khi kích thước mẫu càng lớn thì tốc độ hội tụ của tích phân càng lớn. 
+Nhưng khi mở rộng số chiều của tích phân thì số lượng mẫu cũng phải tăng theo. Điều này cũng làm ảnh hưởng đến tốc độ tính toán của máy tính.
+Nếu cố định số lượng mẫu thì tốc độ hội tụ của tích phân sẽ giảm khi số chiều tăng lên. Nhìn chung, tốc độ hội tụ của phương pháp Monte Carlo là khá thấp.
+Vì vậy, phương pháp tích phân Monte-Carlo sử dụng thuật toán Vegas sẽ giải quyết hiệu quả với các tích phân nhiều chiều.
+\par
+Đặc điểm thuật toán: 
+\begin{enumerate}
+      \item Phương sai chính xác cho tích phân thì được tính toán dễ dàng.
+      \item Hàm tính tích phân không cần liên tục khi sử dụng thuật toán mới này. Đặc biệt, các hàm bước nhảy cũng không có vấn đề gì. Vì thế để tính tích phân nhiều chiều là việc đơn giản.
+      \item Tốc độ hội tụ không phụ thuộc vào số chiều của tích phân.
+      \item Đây là thuật toán thích nghi, nó tự động tập trung tính toán tích phân tại những vùng có tích phân quan trọng nhất.
+\end{enumerate}
+Đặc điểm (1) và (3) là phổ biến trong tất cả phương pháp Monte Carlo. Với (4) là một tính năng quan trọng nhất trong thuật toán này. Vấn đề chính trong tính toán các tích phân nhiều chiều là việc tăng số lượng mẫu theo cấp số nhân khi tăng số chiều. 
+Do đó, mục đích chung của thuật toán để tính toán tích phân nhiều chiều là thích nghi.
+\section{Tích phân Monte Carlo sử dụng thuật toán Vegas}\label{sec:3.2}
+Monte Carlo thật ra là một phương pháp khá đơn giản. Nhưng 
+vấn đề giảm phương sai cần được quan tâm. Để giảm phương sai, tất cả những gì có thể làm là tăng số lượng mẫu N. 
+Muốn giảm phương sai xuống hai lần thì phải tăng gấp bốn lần số mẫu. Đối với các hàm tích phân nhiều chiều, 
+số lượng mẫu tăng theo cấp số nhân khi số chiều tăng lên. Do đó, có nhiều phương pháp đã được nghiên cứu để giảm phương sai mà 
+không cần tăng số lượng mẫu N. Như vậy, phương pháp lấy mẫu trọng và phương pháp lấy mẫu phân tầng được thuật toán Vegas sử 
+dụng để giảm phương sai.\par
+\subsection{Lấy mẫu trọng}\label{subsec:3.2.1}
+\subsection{Lấy mẫu phân tầng}\label{subsec:3.2.2}
+\subsection{Thuật toán Vegas}\label{subsec:3.2.3}

@@ -1,0 +1,32 @@
+\documentclass{myclass}
+
+\graphicspath{ {image/} }
+
+\title{THIS IS THESIS TITLE IT IS VERY VERY LONG TO HAVE LINE BREAK}
+
+
+
+\makenoidxglossaries
+
+\newacronym{gcd}{GCD}{Greatest Common Divisor}
+ 
+\newacronym{lcm}{LCM}{Least Common Multiple}
+
+\begin{document}
+\author{Nguyen Thi A\\  &Tran Thi C \\ &Vo Van C}
+\supervisorName{Dr. Tran Van B}
+\printcoverpage  
+
+\acknowledgements{\input{chapter/acknowledgements}}
+\printfrontmatter
+%\startintroduction
+\include{chapter/introduction}
+
+\include{chapter/chapter1}
+
+%\chapter{Tựa chương 2}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+
+
+\end{document}

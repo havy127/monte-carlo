@@ -1,0 +1,65 @@
+\documentclass[vietnamese]{vlththesis}
+\geometry{
+left=0.79in, right=0.7in, top=0.8in, bottom=1in,
+}
+\newlength{\mylengthnew}
+\settowidth{\mylengthnew}{Ten de tai KLTN:\ }
+
+\begin{document}
+\pagestyle{empty}
+\hspace{-1.5cm}\begin{minipage}[t]{0.5\textwidth}
+\centering
+TRƯỜNG ĐH KHTN\\
+\theFaculty\\
+\textbf{Bộ môn Vật Lý Tin Học}
+\end{minipage}
+\hfill\hspace{1cm}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\bfseries
+CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM\\
+Độc lập--Tự do--Hạnh phúc
+\end{minipage}
+\par~\par
+\begin{center}
+ \large
+TÓM TẮT NỘI DUNG KLTN
+\end{center}
+\begin{flushleft}
+Họ tên sinh viên: Trịnh Tích Thiện \hspace{2in} MSSV:1313172\\
+Tên đề tài KLTN: \textbf{THIẾT KẾ LUẬN VĂN, BÀI BÁO CÁO SỬ DỤNG HỆ THỐNG\\ \hspace{\mylengthnew}LaTeX}\\
+Thuộc chuyên ngành: Vật Lý Tin Học\\
+Họ tên người hướng dẫn: TS. Nguyễn Chí Linh\\
+Cơ quan công tác: Trường Đại Học Khoa Học Tự Nhiên
+\end{flushleft}
+\begin{center}
+\textbf{TÓM TẮT NỘI DUNG}
+\end{center}
+
+Ngày nay, ngoài các trình soạn thảo văn bản phổ biến, LaTeX cũng là một sự lựa chọn dành cho người soạn thảo được
+tạo ra với triết lý hoàn toàn khác biệt so với các trình hiện hành. Năm 1977, Donald E.Knuth đã phát
+triển hệ thống TeX, và từ đó, Leslie Lamport xây dựng thành LaTeX, với mục đích giúp người dùng sử dụng câu
+lệnh để việc thiết kế văn bản được thực hiện một cách tự động bởi hệ thống. \par 
+Nhận thấy LaTeX thích hợp để tạo các văn bản có quy chuẩn rõ ràng, đồng thời nền tảng cho phép người dùng thiết kế bố cục và kiểu văn bản
+cho riêng mình, đề tài này đã ra đời nhằm mục đích thiết kế, xây dựng một mẫu báo cáo khoá luận chuẩn trên nền LaTeX, định nghĩa các câu lệnh
+mới để hỗ trợ những người dùng sau này có thể dễ dàng định dạng các báo cáo khoá luận mà không tốn nhiều thời gian vào việc thiết kế, canh chỉnh, thay vào đó
+tập trung hơn vào nội dung và thành phần văn bản của mình, kế thừa đúng với tinh thần của những người sáng tạo ra LaTeX.\par
+Đề tài tập trung tổng hợp các gói, khai báo và xây dựng các câu lệnh để tạo thành một tập tin lớp (class file)
+hỗ trợ định dạng bố cục cho các khoá luận tốt nghiệp và báo cáo, đề tài cũng đồng thời đưa ra những
+hướng dẫn cơ bản để người dùng có thể cài đặt và nắm bắt được cách tạo một tập tin đầu vào LaTeX đơn giản.\par
+Do thời gian tìm hiểu có giới hạn, tập tin lớp vẫn còn đó nhiều khuyết điểm và vẫn cần được sử
+dụng trong một thời gian dài để ghi nhận những bổ sung cần thiết, nhưng sản phẩm 
+cũng đủ để trở thành nền tảng cho nhiều hướng phát triển sau này. Ngoài ra, báo cáo đề tài cũng bao gồm
+các phân tích cấu trúc của thành phẩm và tổng hợp các tài liệu cần thiết, để khi kết hợp với tập tin lớp, sẽ trở thành cơ sở tham khảo
+cho người dùng tạo ra bố cục văn bản hoặc tính năng mới cho LaTeX.\par
+Hướng phát triển của đề tài bao gồm:\par
+\begin{itemize}
+ \item Tham khảo thêm các lớp mới, tìm kiếm gói phù hợp bù đắp thiếu xót của tập tin lớp thành phẩm.
+ \item Phát triển thêm các câu lệnh linh hoạt hơn và các môi trường trình bày thông tin mới, đồng thời 
+ phát triển cho lớp hỗ trợ tốt hơn cho việc tạo các văn bản in hai mặt giấy.
+ \item Tập trung vào tìm hiểu thêm về các khái niệm bộ mã kí tự và các gói về font chữ để hạn chế những cảnh báo giải mã tiếng Việt còn tồn động trong sản
+ phẩm đề tài.
+  \item Tìm hiểu thêm về các công cụ, phương tiện hỗ trợ phát triển các gói mởi rộng, lớp văn bản có qui mô lớn, phức tạp.
+\end{itemize}
+
+\end{document}

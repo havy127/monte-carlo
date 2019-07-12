@@ -1,0 +1,14 @@
+[0] Config.pm:302> INFO - This is Biber 2.9
+[1] Config.pm:305> INFO - Logfile is 'main.blg'
+[88] biber-MSWIN64:313> INFO - === 
+[284] Biber.pm:371> INFO - Reading 'main.bcf'
+[451] Biber.pm:857> INFO - Found 24 citekeys in bib section 0
+[501] Biber.pm:3981> INFO - Processing section 0
+[585] Biber.pm:4154> INFO - Looking for bibtex format file 'bibbi.bib' for section 0
+[594] bibtex.pm:1479> INFO - LaTeX decoding ...
+[626] bibtex.pm:1305> INFO - Found BibTeX data source 'bibbi.bib'
+[965] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[965] UCollate.pm:68> INFO - Overriding locale 'vi-VN' defaults 'variable = shifted' with 'variable = non-ignorable'
+[966] Biber.pm:3809> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'vi-VN'
+[1102] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1118] bbl.pm:720> INFO - Output to main.bbl
